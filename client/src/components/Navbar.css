@@ -16,7 +16,6 @@
 
 }
 .top-social {
-    margin-left: 3rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -25,7 +24,7 @@
 .search {
   display: flex;
   align-items: center;
-  margin-right: 20rem;
+  margin-right: 17rem;
   gap: 1rem;
 }
 .search h1 {
@@ -42,7 +41,7 @@
     background-color: #1E1E1E;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 h1{
@@ -89,4 +88,9 @@ a {
     width: 16px;
     height: 16px;
     pointer-events: none;
-  }
+}
+.logo {
+    width: 12.9375rem;
+    height: 4.75rem;
+    flex-shrink: 0;
+}

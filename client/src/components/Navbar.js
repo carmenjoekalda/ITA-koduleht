@@ -36,7 +36,7 @@ function Navbar() {
             </div>
             
             <div className="nav">
-                <img src={logo}></img>
+                <img src={logo} className="logo"></img>
                 <a>Tunniplaan</a>
                 <a>Konsulatatsioonid</a>
                 <a>Praktika</a>

@@ -28,8 +28,8 @@ function Navbar() {
                             <circle cx="11" cy="11" r="7"/>
                             <line x1="16" y1="16" x2="20" y2="20" stroke-linecap="round"/>
                             </svg>
-                        
-                        </div>
+
+                    </div>
                
                 </div>
                 

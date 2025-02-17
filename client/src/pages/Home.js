@@ -6,6 +6,7 @@ function HomePage() {
         <>
         <div>
             <Navbar/>
+            <h1>f</h1>
         </div>
         </>
     )

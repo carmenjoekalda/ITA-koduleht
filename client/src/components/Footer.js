@@ -4,8 +4,7 @@ import { Container } from "react-bootstrap";
 
 function Footer() {
   return (
-    <div className="bg-dark text-white">
-      <Container fluid className="custom-padding">
+      <Container fluid className="custom-padding bg-dark text-white">
         <div className="d-flex align-items-center py-5 justify-content-between">
           <img src={logo} alt="Logo" className="vocologo" />
           <div className="info">
@@ -25,7 +24,6 @@ function Footer() {
             </div>
         </div>
       </Container>
-    </div>
   );
 }
 

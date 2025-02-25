@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import logo from '../assets/vocolog.png';
-import '../App.scss'
+
 function NavigationBar() {
   const [query, setQuery] = useState("");
 

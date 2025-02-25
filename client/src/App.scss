@@ -27,3 +27,24 @@ a, a:link, a:visited{
   height: 12.5vh !important;
   margin-left: -1rem !important;
 }
+
+.spacer-20vh{
+  min-height: 20vh;
+  background-color: $light;
+}
+h1 {
+  color: #1E1E1E;
+  font-family: "Montserrat";
+  font-size: 3rem !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+h4 {
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 1.5rem !important; 
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,6 +1,5 @@
-import logo from './voco.png';
 import './App.scss'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import HomePage from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

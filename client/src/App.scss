@@ -1,0 +1,24 @@
+$light: #FBFBFB;
+$dark: #1E1E1E; 
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+div.bg-light {
+  background-color: $light !important; 
+}
+div.bg-dark{
+  background-color: $dark !important;
+}
+
+.custom-padding {
+  padding-left: 10vw !important;
+  padding-right: 10vw !important;
+}
+a, a:link, a:visited{
+  font-size: 1.5rem;
+  font-family: "Montserrat";  
+  color: white; 
+  margin-left: 1rem; 
+  margin-right: 1rem;
+  text-decoration: none; 
+}

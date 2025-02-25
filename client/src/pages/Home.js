@@ -1,18 +1,16 @@
 import React from "react";
-import './Home.css'
+
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
+
+import '../App.scss'
 function HomePage() {
     return (
-        <>
-        <div>
-            <Navbar/>
-            <div className="spacer">
-
+        <body>
+            <div>
+                <Navbar/>
             </div>
-            <Footer/>
-        </div>
-        </>
+        </body>
     )
 }
 export default HomePage

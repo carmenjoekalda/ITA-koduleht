@@ -1,7 +1,7 @@
 import React from "react";
 
 import Navbar from "../components/Navbar";
-
+import Footer from "../components/Footer";
 
 import '../App.scss'
 function HomePage() {
@@ -9,6 +9,8 @@ function HomePage() {
         <body>
             <div>
                 <Navbar/>
+                <div className="min-vh-100"></div> 
+                <Footer/>
             </div>
         </body>
     )

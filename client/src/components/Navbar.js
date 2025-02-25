@@ -48,9 +48,9 @@ function NavigationBar() {
       </div>
       <div className="bg-dark">
       <Container fluid className="custom-padding">
-          <div className="d-flex align-items-center py-2">
-            <img src={logo} alt="Logo" className="me-auto" style={{ height: "12.5vh"}} />
-            <div className="d-flex mx-4">
+      <div className="d-flex align-items-center py-2 justify-content-between">
+      <img src={logo} alt="Logo" className="me-auto" style={{ height: "12.5vh", marginLeft: "-1rem"}} />
+            <div className="d-flex ms-auto">
               <a href="#tunniplaan">Tunniplaan</a>
               <a href="#konsultatsioonid">Konsultatsioonid</a>
               <a href="#praktika">Praktika</a>

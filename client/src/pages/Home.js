@@ -4,6 +4,7 @@ import "../App.scss";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HomeSlider from "../components/HomeSlider";
+import EventsCalendar from "../components/EventsCalendar";
 
 function HomePage() {
   return (
@@ -27,6 +28,7 @@ function HomePage() {
           </h4>
         </div>
         <div className="spacer-20vh"></div>
+        <EventsCalendar/>
         <Footer />
       </div>
   );

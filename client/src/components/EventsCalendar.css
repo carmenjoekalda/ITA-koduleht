@@ -2,17 +2,74 @@
     border-radius: 10px 0px 0px 0px;
     border: 1px solid #757575;
     background: #D9D9D9;
-    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+    height: 3.25rem;
 }
 
 .page2-btn-notselected{
     border-radius: 0px 5px 0px 0px;
     border: 1px solid rgba(117, 117, 117, 0.50);
     background: rgba(117, 117, 117, 0.50);
+    height: 3.25rem;
 }
 .page2-btn-selected{
     border-radius: 0px 5px 0px 0px;
     border: 1px solid #1E1E1E;
     background: #757575;
-    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+    height: 3.25rem;
+}
+.page1-top{
+    background: #D9D9D9;
+    height: 4.75rem;
+    border-bottom: 1px solid #757575;
+}
+.page1-search {
+    border-radius: 10px;
+    border: 1px solid rgba(158, 158, 158, 0.40);
+    background: rgba(238, 238, 238, 0.93);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    width: 196px;
+    height: 51px;
+    flex-shrink: 0;
+}
+.page1-container {
+    border-radius: 10px 0px 10px 10px;
+    border: 1px solid #757575;
+    overflow: hidden;
+}
+h1 {
+    color: #1E1E1E;
+    font-family: "Montserrat";
+    font-size: 2.1875rem !important;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+h2 {
+    color: #1E1E1E;
+    font-family: Montserrat;
+    font-size: 1.4375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+h3 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+p{
+    color: #000;
+font-family: Montserrat;
+font-size: 1.5625rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.page1-box{
+    background-color: #EEE;
+    stroke-width: 1px;
+    stroke: #757575;
 }

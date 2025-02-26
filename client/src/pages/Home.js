@@ -11,7 +11,7 @@ function HomePage() {
       <div className="bg-light">
         <Navbar />
         <HomeSlider />
-        <div className="spacer-20vh"></div>
+        <div className="spacer"></div>
         <div className="custom-padding">
           <h1 className="mb-3">IT Akadeemia leht</h1>
           <h4>
@@ -27,7 +27,7 @@ function HomePage() {
             in hendrerit urna.
           </h4>
         </div>
-        <div className="spacer-20vh"></div>
+        <div className="spacer"></div>
         <EventsCalendar/>
         <Footer />
       </div>

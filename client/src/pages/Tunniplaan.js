@@ -1,7 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GroupSearch from '../components/GroupSearch';
 import LessonTable from '../components/LessonTable';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import './Tunniplaan.scss';
+
 
 const Tunniplaan = () => {
   const schedule = [
@@ -14,18 +18,27 @@ const Tunniplaan = () => {
 
   const days = ["Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede"];
   const periods = ["1.t", "2.t", "3.t", "4.t", "5.t", "6.t", "7.t"];
-  const lesson_times = {"1.t": "8.30 - 10.00", "2.t": "10.10 - 11.45", "3.t": "12.30 - 14.00", "4.t": "14.10 - 15.40", "5.t": "15.45 - 17.15"};
+  const lesson_times = { "1.t": "8.30 - 10.00", "2.t": "10.10 - 11.45", "3.t": "12.30 - 14.00", "4.t": "14.10 - 15.40", "5.t": "15.45 - 17.15" };
 
   const [group, setGroup] = useState('');
 
   return (
-    <div className='tunniplaan-page container'>
-      <h1 className='mb-4'>Tunniplaan</h1>
-      <GroupSearch setGroup={setGroup} />
-      
-      <LessonTable schedule={schedule} days={days} periods={periods} lesson_times={lesson_times} selected={group} />
-      
+    <div>
+      <Navbar />
+      <div className='spacer-20vh'></div>
+      <div className='custom-padding'>
+        <div className='tunniplaan-page'>
+          <h1 className='mb-4'>Tunniplaan</h1>
+          <GroupSearch setGroup={setGroup} />
+
+          <LessonTable schedule={schedule} days={days} periods={periods} lesson_times={lesson_times} selected={group} />
+
+        </div>
+      </div>
+      <div className='spacer-20vh'></div>
+      <Footer />
     </div>
+
   );
 };
 

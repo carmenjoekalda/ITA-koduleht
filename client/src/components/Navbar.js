@@ -38,7 +38,7 @@ function NavigationBar() {
         <div className="d-flex align-items-center py-2 justify-content-between">
           <img src={logo} alt="Logo" className="vocologo" />
           <div className="d-flex ms-auto">
-            <a href="#tunniplaan">Tunniplaan</a>
+            <a href="/tunniplaan">Tunniplaan</a>
             <a href="#konsultatsioonid">Konsultatsioonid</a>
             <a href="#praktika">Praktika</a>
             <a href="#erialad">Erialad</a>

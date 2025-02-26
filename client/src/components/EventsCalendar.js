@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-
+import './EventsCalendar.css'
+import { TableIcon, FacebookIcon, ServerIcon } from "../assets/icons";
 function EventsCalendar() {
   const [activePage, setActivePage] = useState(2);
 
@@ -10,20 +11,24 @@ function EventsCalendar() {
         <div className="d-flex justify-content-between">
           <h1>Sündmuste kalender</h1>
           <div className="d-flex ml-auto">
-            <button
+            <button className="page1-btn"
               onClick={() => setActivePage(1)}
               style={{
-                width: "10rem",
+                width: "12rem",
                 borderTopLeftRadius: "0.4rem",
               }}
-            ></button>
-            <button
+            >
+              <ServerIcon/>
+            </button>
+            <button className={`${activePage === 2 ? "page2-btn-selected" : "page-2-btn-notselected"}`}
               onClick={() => setActivePage(2)}
               style={{
-                width: "8rem",
+                width: "10rem",
                 borderTopRightRadius: "0.4rem",
               }}
-            ></button>
+            >
+<TableIcon fill={activePage === 2 ? "hsla(0, 0%, 98%, 1)" : "hsla(0, 0%, 27%, 1)"} />
+</button>
           </div>
         </div>
         {activePage === 1 ? (

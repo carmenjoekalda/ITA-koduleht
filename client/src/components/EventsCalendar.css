@@ -1,0 +1,18 @@
+.page1-btn {
+    border-radius: 10px 0px 0px 0px;
+    border: 1px solid #757575;
+    background: #D9D9D9;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.page2-btn-notselected{
+    border-radius: 0px 5px 0px 0px;
+    border: 1px solid rgba(117, 117, 117, 0.50);
+    background: rgba(117, 117, 117, 0.50);
+}
+.page2-btn-selected{
+    border-radius: 0px 5px 0px 0px;
+    border: 1px solid #1E1E1E;
+    background: #757575;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+}

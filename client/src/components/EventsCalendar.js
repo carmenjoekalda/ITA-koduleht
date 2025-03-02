@@ -2,34 +2,10 @@ import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import "./EventsCalendar.css";
 import { ServerIcon, TableIcon } from "../assets/icons";
+import CalendarPage from "./CalendarTable";
 
-const months = [
-  "Jaanuar",
-  "Veebruar",
-  "Märts",
-  "Aprill",
-  "Mai",
-  "Juuni",
-  "Juuli",
-  "August",
-  "September",
-  "Oktoober",
-  "November",
-  "Detsember",
-];
 function EventsCalendar() {
   const [activePage, setActivePage] = useState(1);
-
-  const currentMonth = new Date().getMonth();
-  const [monthIndex, setMonthIndex] = useState(currentMonth);
-
-  const handlePrev = () => {
-    setMonthIndex((prevIndex) => (prevIndex === 0 ? 11 : prevIndex - 1));
-  };
-
-  const handleNext = () => {
-    setMonthIndex((prevIndex) => (prevIndex === 11 ? 0 : prevIndex + 1));
-  };
 
   const EventInfo = ({ title, date, heading, description }) => {
     return (
@@ -145,32 +121,7 @@ function EventsCalendar() {
           </div>
         ) : (
           //Page 2
-          <div className="page-container">
-            <div className="page2-top d-flex justify-content-between align-items-center px-4">
-              <div className="d-flex">
-                <div className="d-flex align-items-center">
-                  <button
-                    className="triangle-btn left me-2"
-                    onClick={handlePrev}
-                  ></button>
-
-                  <div className="page2-month-selector mx-2">
-                    <h2>{months[monthIndex]}</h2>
-                  </div>
-                  <button
-                    className="triangle-btn right ms-2"
-                    onClick={handleNext}
-                  ></button>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Õppegrupp..."
-                  className="search p-2 ms-2"
-                ></input>
-              </div>
-              <h1 className="page2-text">2025</h1>
-            </div>
-          </div>
+          <CalendarPage />
         )}
       </Container>
 

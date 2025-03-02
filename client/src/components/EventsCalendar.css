@@ -34,7 +34,7 @@
 .page-container {
   border-radius: 10px 0px 10px 10px;
   border: 1px solid #757575;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 h1 {
   color: #1e1e1e;
@@ -121,3 +121,60 @@ p {
   font-weight: 700;
   line-height: normal;
 }
+
+tbody tr {
+  height: 8rem;;
+}
+.calendar-table {
+  width: 100%;
+  background: #F6F6F6;
+}
+
+.strong-border {
+  border: 1px solid black !important;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  padding: 10px;
+  box-sizing: border-box; 
+}
+
+.current-month {
+  color: black;
+  background-color: white;
+}
+
+.non-current-month {
+  color: gray !important;
+  background-color: #f0f0f0 !important;
+}
+
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse; 
+  border: 1px solid black; 
+}
+
+.strong-border {
+  border: 1px solid black !important; 
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  padding: 10px;
+  box-sizing: border-box; 
+  height: 100px; 
+  overflow: hidden; 
+}
+
+.current-month {
+  color: black;
+  background-color: white;
+}
+
+
+.non-current-month {
+  color: gray !important;
+  background-color: #f0f0f0 !important;
+}
+

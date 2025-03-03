@@ -25,17 +25,17 @@ const Tunniplaan = () => {
   return (
     <div>
       <Navbar />
-      <div className='spacer-20vh'></div>
+      <div className='spacer'></div>
       <div className='custom-padding'>
         <div className='tunniplaan-page'>
-          <h1 className='mb-4'>Tunniplaan</h1>
+          <h1 className='mb-5'>Tunniplaan</h1>
           <GroupSearch setGroup={setGroup} />
 
           <LessonTable schedule={schedule} days={days} periods={periods} lesson_times={lesson_times} selected={group} />
 
         </div>
       </div>
-      <div className='spacer-20vh'></div>
+      <div className='spacer'></div>
       <Footer />
     </div>
 

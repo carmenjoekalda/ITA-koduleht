@@ -40,7 +40,7 @@ function NavigationBar() {
           <div className="d-flex ms-auto">
             <a href="#tunniplaan">Tunniplaan</a>
             <a href="#konsultatsioonid">Konsultatsioonid</a>
-            <a href="#praktika">Praktika</a>
+            <a href="praktika">Praktika</a>
             <a href="#erialad">Erialad</a>
             <a href="#kutse">Kutsemeistrivõistlused</a>
             <a href="#tunnustused">Tunnustused</a>

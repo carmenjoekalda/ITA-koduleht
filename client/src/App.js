@@ -1,7 +1,8 @@
 import './App.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import HomePage from './pages/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Praktika from './pages/Praktika';
 
 function App() {
   return (
@@ -12,6 +13,12 @@ function App() {
           element={
             <HomePage/>
           }
+          />
+          <Route
+            path="/praktika"
+            element={
+              <Praktika/>
+            }
           />
         </Routes>
         </BrowserRouter>

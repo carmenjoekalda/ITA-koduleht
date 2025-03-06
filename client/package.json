@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage": "https://carmenjoekalda.github.io/ITA-koduleht",
   "private": true,
   "dependencies": {
     "@fontsource/montserrat": "^5.1.1",
@@ -19,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",
     "webpack": "^5.98.0"

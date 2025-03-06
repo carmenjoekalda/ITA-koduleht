@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import NavigationBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Praktika.css";
+import { Table } from 'react-bootstrap';
+
 function Praktika() {
   const [selectedBtn, setSelectedBtn] = useState(0);
 
@@ -65,6 +67,29 @@ function Praktika() {
         </div>
       </div>
       <div className="spacer" />
+        <div className="custom-padding">
+            <h1 className="mb-2">Praktika perioodid</h1>
+            <table bordered className="custom-table">
+                <thead className="bg-dark">
+                <tr style={{height: "5.5rem"}}>
+                            <th style={{width: "18rem"}}>dw</th>
+                            <th style={{width: "100%"}}></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>fesfse</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>More content for column 2.</td>
+                        </tr>
+                    </tbody>
+            </table> 
+        </div>
+      <div className="spacer" />
+
 
       <Footer />
     </div>

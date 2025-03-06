@@ -6,7 +6,7 @@ import Praktika from './pages/Praktika';
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename="/ITA-koduleht">
       <Routes>
         <Route
           path="/"

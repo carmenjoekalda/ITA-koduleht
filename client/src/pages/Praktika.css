@@ -22,3 +22,11 @@
     background: #1E1E1E;
     color: #FBFBFB;
 }
+.praktika-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.praktika-table th, td{
+    border: 1px solid #1E1E1E;
+}

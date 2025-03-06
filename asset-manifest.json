@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ITA-koduleht/static/css/main.7dedda5e.css",
-    "main.js": "/ITA-koduleht/static/js/main.d74392cd.js",
+    "main.js": "/ITA-koduleht/static/js/main.fbc82f7e.js",
     "static/js/488.5dc00adb.chunk.js": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js",
     "static/media/montserrat-latin-ext-400-normal.woff": "/ITA-koduleht/static/media/montserrat-latin-ext-400-normal.85beb71046499a27877f.woff",
     "static/media/montserrat-latin-ext-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-latin-ext-400-normal.1974241fa9a808c0c154.woff2",
@@ -16,11 +16,11 @@
     "static/media/montserrat-vietnamese-400-normal.woff": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.c14d61c769222a9ee56c.woff",
     "index.html": "/ITA-koduleht/index.html",
     "main.7dedda5e.css.map": "/ITA-koduleht/static/css/main.7dedda5e.css.map",
-    "main.d74392cd.js.map": "/ITA-koduleht/static/js/main.d74392cd.js.map",
+    "main.fbc82f7e.js.map": "/ITA-koduleht/static/js/main.fbc82f7e.js.map",
     "488.5dc00adb.chunk.js.map": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7dedda5e.css",
-    "static/js/main.d74392cd.js"
+    "static/js/main.fbc82f7e.js"
   ]
 }

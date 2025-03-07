@@ -42,7 +42,7 @@ function NavigationBar() {
             <a href="#konsultatsioonid">Konsultatsioonid</a>
             <a href="#praktika">Praktika</a>
             <a href="#erialad">Erialad</a>
-            <a href="/kutse">Kutsemeistrivõistlused</a>
+            <a href="/tegija">Kutsemeistrivõistlused</a>
             <a href="#tunnustused">Tunnustused</a>
             <a href="#kontaktid">Kontaktid</a>
           </div>

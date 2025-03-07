@@ -20,12 +20,16 @@ $dark: #1E1E1E;
     h4 {
         padding: 0 5%;
         margin-bottom: 2rem;
+        color: #000 !important;
     }
 
     button {
-        height: 3.1875rem;
+        display: flex;
+        height: 3.7rem;
         width: 12rem;
         background-color: #6F6F6F;
+        align-items: center;
+        justify-content: center;
         border-radius: 45px;
         border: none;
         color: #FBFBFB;

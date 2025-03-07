@@ -34,6 +34,12 @@ a, a:link, a:visited{
   min-height: calc(var(--space-unit) * 1);;
   background-color: $light;
 }
+
+.line {
+  border-top: 2px solid #1E1E1E;
+  width: 100%;
+}
+
 h1 {
   color: #1E1E1E;
   font-family: "Montserrat";
@@ -45,7 +51,7 @@ h1 {
 h4 {
   color: #000;
   font-family: "Montserrat";
-  font-size: 1.125rem !important; 
+  font-size: 1.5625rem !important; 
   font-style: normal;
   font-weight: 400 !important;
   line-height: normal !important;

@@ -2,7 +2,6 @@ import React from 'react';
 
 const GroupSearch = ({ setGroup }) => {
     const handleChange = (e) => {
-        console.log(e.target.value);
         setGroup(e.target.value);
     }
 

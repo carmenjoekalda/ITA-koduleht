@@ -128,5 +128,25 @@ td {
 }
 .prakkand p,
 h1 {
-  padding-bottom: 2.375rem;
+  padding-bottom: 3.25rem;
+}
+.prakkand h2 {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.prakkand a {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 2px;
+  margin-bottom: 0.6rem;
 }

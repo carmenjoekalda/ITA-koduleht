@@ -152,33 +152,76 @@ function Praktika() {
             <div>
               <h1>Erialade praktika juhendid</h1>
               <table bordered className="custom-table">
-            <thead>
-              <tr>
-                <th style={{ width: "17.5rem", border: "1px solid black" }}>
-                  Õppegrupp
-                </th>
-                <th className="praktika-top-container">
-                  
-                  <p className="praktika-top-text mt-3">Erialade praktika juhendid</p>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, index) => (
-                <tr key={index} style={{ height: "4rem" }}>
-                  <td className="col1">{row.group}</td>
-                  <td className="col2">Link</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                <thead>
+                  <tr>
+                    <th style={{ width: "17.5rem", border: "1px solid black" }}>
+                      Õppegrupp
+                    </th>
+                    <th className="praktika-top-container">
+                      <p className="praktika-top-text mt-3">
+                        Erialade praktika juhendid
+                      </p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, index) => (
+                    <tr key={index} style={{ height: "4rem" }}>
+                      <td className="col1">{row.group}</td>
+                      <td className="col2">Link</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
           {/* Välistpraktikale kandideerimine */}
 
           {selectedBtn === 3 && (
-            <div>
+            <div className="prakkand">
               <h1>Välistpraktikale kandideerimine</h1>
+              <div className="d-flex flex-column mb-5">
+                <h2>Juhendid</h2>
+                <a href="x"> Juhend</a>
+                <a href="x"> Juhend</a>
+                <a href="x"> Juhend</a>
+              </div>
+              <h2>Välistpraktika</h2>
+              <p>
+                Vajalik informatsioon ja joonised välis praktikale
+                kandideerimiseks. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
+              </p>
+              <div className="praktika-img">
+                <img src={pic1}></img>
+                <div>
+                  <p> Foro konta infot</p>
+                  <p>Foto avaldaja</p>
+                </div>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
+                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                Maecenas vitae mattis tellus.
+              </p>
+              <div className="praktika-img">
+                <img src={pic3}></img>
+                <div>
+                  <p> Foto konta infot</p>
+                  <p>Foto avaldaja</p>
+                </div>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
+                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
+                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                amet.
+              </p>
             </div>
           )}
         </div>

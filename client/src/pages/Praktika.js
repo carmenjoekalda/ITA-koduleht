@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import NavigationBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Praktika.css";
+import pic1 from "../assets/pic1.png";
+import pic2 from "../assets/pic2.png";
+import pic3 from "../assets/pic3.png";
 
 function Praktika() {
   const [selectedBtn, setSelectedBtn] = useState(0);
@@ -63,7 +66,7 @@ function Praktika() {
           {/*the reason I rounded individual buttons instead of the box is that it clipped the corners on the bottom button in a strange way.*/}
         </div>
         <div style={{ marginLeft: "3.1875rem" }}>
-          {/*the different pages */}
+          {/* praktika perioodid */}
 
           {selectedBtn === 0 && (
             <div>
@@ -83,16 +86,75 @@ function Praktika() {
               </p>
             </div>
           )}
+          {/* Praktikale kandideerimine */}
+
           {selectedBtn === 1 && (
-            <div>
+            <div className="prakkand">
               <h1>Praktikale kandideerimine</h1>
+              <p>
+                Vajalik informatsioon ja joonised praktikale kandideerimiseks.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
+                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
+                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                amet. Pellentesque commodo lacus at sodales sodales. Quisque
+                sagittis orci ut diam condimentum, vel euismod erat placerat.
+              </p>
+              <div className="praktika-img">
+                <img src={pic1}></img>
+                <div>
+                  <p> Foro konta infot</p>
+                  <p>Foto avaldaja</p>
+                </div>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
+                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                Maecenas vitae mattis tellus.
+              </p>
+              <div className="praktika-img">
+                <img src={pic2}></img>
+                <div>
+                  <p> Foto konta infot</p>
+                  <p>Foto avaldaja</p>
+                </div>
+              </div>
+              <div className="praktika-img">
+                <img src={pic2}></img>
+                <div>
+                  <p> Foto konta infot</p>
+                  <p>Foto avaldaja</p>
+                </div>
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
+                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
+                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                amet.
+              </p>
+              <div className="d-flex flex-column">
+                <a> vajalikud lingid</a>
+                <a> vajalikud lingid</a>
+                <a> vajalikud lingid</a>
+              </div>
             </div>
           )}
+          {/* Erialade praktika juhendid */}
+
           {selectedBtn === 2 && (
             <div>
               <h1>Erialade praktika juhendid</h1>
             </div>
           )}
+          {/* Välistpraktikale kandideerimine */}
+
           {selectedBtn === 3 && (
             <div>
               <h1>Välistpraktikale kandideerimine</h1>

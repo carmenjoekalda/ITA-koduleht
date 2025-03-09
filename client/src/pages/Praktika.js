@@ -63,51 +63,74 @@ function Praktika() {
           {/*the reason I rounded individual buttons instead of the box is that it clipped the corners on the bottom button in a strange way.*/}
         </div>
         <div style={{ marginLeft: "3.1875rem" }}>
-          <h1 style={{ marginBottom: "2.375rem" }}>Praktika</h1>
-          <p>
-            Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
-            kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
-            praktika kohta. Tutvustustav tekst praktika kohta. Tutvustustav
-            tekst praktika kohta. Tutvustustav tekst praktika kohta.
-            Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
-            kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
-            praktika kohta. Tutvustustav tekst praktika kohta. Tutvustustav
-            tekst praktika kohta. Tutvustustav tekst praktika kohta.
-            Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
-            kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
-            praktika kohta. Tutvustustav tekst praktika kohta.
-          </p>
+          {/*the different pages */}
+
+          {selectedBtn === 0 && (
+            <div>
+              <h1 style={{ marginBottom: "2.375rem" }}>Praktika</h1>
+              <p>
+                Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
+                kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
+                praktika kohta. Tutvustustav tekst praktika kohta. Tutvustustav
+                tekst praktika kohta. Tutvustustav tekst praktika kohta.
+                Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
+                kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
+                praktika kohta. Tutvustustav tekst praktika kohta. Tutvustustav
+                tekst praktika kohta. Tutvustustav tekst praktika kohta.
+                Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
+                kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
+                praktika kohta. Tutvustustav tekst praktika kohta.
+              </p>
+            </div>
+          )}
+          {selectedBtn === 1 && (
+            <div>
+              <h1>Praktikale kandideerimine</h1>
+            </div>
+          )}
+          {selectedBtn === 2 && (
+            <div>
+              <h1>Erialade praktika juhendid</h1>
+            </div>
+          )}
+          {selectedBtn === 3 && (
+            <div>
+              <h1>Välistpraktikale kandideerimine</h1>
+            </div>
+          )}
         </div>
       </div>
       <div className="spacer" />
-      <div className="custom-padding">
-        <h1 style={{ marginBottom: "2.4375rem" }}>Praktika perioodid</h1>
-        <table bordered className="custom-table">
-          <thead>
-            <tr>
-              <th style={{ width: "17.5rem", border: "1px solid black" }}>
-                Õppegrupp
-              </th>
-              <th className="praktika-top-container">
-                <select className="year-box">
-                  <option value="2025/2026">2025/2026</option>
-                  <option value="2024/2025">2026/2027</option>
-                  <option value="2023/2024">2027/2028</option>
-                </select>
-                <p className="praktika-top-text mt-3">Praktika perioodid</p>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, index) => (
-              <tr key={index} style={{ height: "4rem" }}>
-                <td className="col1">{row.group}</td>
-                <td className="col2">{row.period}</td>
+      {selectedBtn === 0 && (
+        <div className="custom-padding">
+          <h1 style={{ marginBottom: "2.4375rem" }}>Praktika perioodid</h1>
+          <table bordered className="custom-table">
+            <thead>
+              <tr>
+                <th style={{ width: "17.5rem", border: "1px solid black" }}>
+                  Õppegrupp
+                </th>
+                <th className="praktika-top-container">
+                  <select className="year-box">
+                    <option value="2025/2026">2025/2026</option>
+                    <option value="2024/2025">2026/2027</option>
+                    <option value="2023/2024">2027/2028</option>
+                  </select>
+                  <p className="praktika-top-text mt-3">Praktika perioodid</p>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {rows.map((row, index) => (
+                <tr key={index} style={{ height: "4rem" }}>
+                  <td className="col1">{row.group}</td>
+                  <td className="col2">{row.period}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
       <div className="spacer" />
 
       <Footer />

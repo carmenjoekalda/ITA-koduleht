@@ -151,6 +151,27 @@ function Praktika() {
           {selectedBtn === 2 && (
             <div>
               <h1>Erialade praktika juhendid</h1>
+              <table bordered className="custom-table">
+            <thead>
+              <tr>
+                <th style={{ width: "17.5rem", border: "1px solid black" }}>
+                  Õppegrupp
+                </th>
+                <th className="praktika-top-container">
+                  
+                  <p className="praktika-top-text mt-3">Erialade praktika juhendid</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, index) => (
+                <tr key={index} style={{ height: "4rem" }}>
+                  <td className="col1">{row.group}</td>
+                  <td className="col2">Link</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
             </div>
           )}
           {/* Välistpraktikale kandideerimine */}

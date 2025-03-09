@@ -89,8 +89,12 @@ function Praktika() {
                 Õppegrupp
               </th>
               <th className="praktika-top-container">
-                <div className="year-box">2025/2026</div>
-                <p className="praktika-top-text">Praktika perioodid</p>
+                <select className="year-box">
+                  <option value="2025/2026">2025/2026</option>
+                  <option value="2024/2025">2026/2027</option>
+                  <option value="2023/2024">2027/2028</option>
+                </select>
+                <p className="praktika-top-text mt-3">Praktika perioodid</p>
               </th>
             </tr>
           </thead>

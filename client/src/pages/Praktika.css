@@ -62,7 +62,12 @@ td {
   text-align: center;
   font-size: 1.5625rem;
   color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
 }
+
 .praktika-top-container {
   margin: 0;
   padding: 0;

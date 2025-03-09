@@ -1,32 +1,105 @@
-.praktika-button, .praktika-button-selected {
-    width: 17.4375rem;
-    height: 5.3125rem;
-    flex-shrink: 0;
-    border: 1px solid #1E1E1E;
-    font-family: Montserrat;
-    font-size: 1.5625rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-align: left;
-    padding-left: 1rem;
+.praktika-button,
+.praktika-button-selected {
+  width: 17.4375rem;
+  height: 5.3125rem;
+  flex-shrink: 0;
+  border: 1px solid #1e1e1e;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  padding-left: 1rem;
 }
 
 .praktika-button {
-    background: #D9D9D9;
-    color: #1E1E1E;
+  background: #d9d9d9;
+  color: #1e1e1e;
 }
-
 
 .praktika-button-selected {
-    background: #1E1E1E;
-    color: #FBFBFB;
+  background: #1e1e1e;
+  color: #fbfbfb;
 }
 .praktika-table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.praktika-table th, td{
-    border: 1px solid #1E1E1E;
+.praktika-table th,
+td {
+  border: 1px solid #1e1e1e;
+}
+.custom-table {
+  border-radius: 10px 10px 0 10px;
+  table-layout: fixed;
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+}
+.custom-table thead {
+  border: 1px solid #1e1e1e;
+  background: #383838;
+  color: #fbfbfb;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 5.5rem;
+}
+.year-box {
+  width: 9.9375rem;
+  height: 3.875rem;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #757575;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5625rem;
+  color: #333;
+}
+.praktika-top-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.4375rem;
+}
+.praktika-top-container p {
+  color: #fbfbfb;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.custom-table th,
+.custom-table td {
+  padding: 1.8125rem;
+}
+
+.col1 {
+  background-color: #383838;
+  color: #fbfbfb;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 5.5rem;
+}
+.col2 {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #f2f2f2;
 }

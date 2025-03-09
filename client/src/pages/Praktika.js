@@ -66,29 +66,29 @@ function Praktika() {
         </div>
       </div>
       <div className="spacer" />
-        <div className="custom-padding">
-            <h1 className="mb-2">Praktika perioodid</h1>
-            <table bordered className="custom-table">
-                <thead className="bg-dark">
-                <tr style={{height: "5.5rem"}}>
-                            <th style={{width: "18rem"}}></th>
-                            <th style={{width: "100%"}}></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>fesfse</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>More content for column 2.</td>
-                        </tr>
-                    </tbody>
-            </table> 
-        </div>
+      <div className="custom-padding">
+        <h1 style={{ marginBottom: "2.4375rem" }}>Praktika perioodid</h1>
+        <table bordered className="custom-table">
+          <thead>
+            <tr>
+              <th style={{ width: "17.5rem", border: "1px solid black" }}>
+                Õppegrupp
+              </th>
+              <th className="praktika-top-container">
+                <div className="year-box">2025/2026</div>
+                <p className="praktika-top-text">Praktika perioodid</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style={{ height: "4rem" }}>
+              <td className="col1">IS23</td>
+              <td className="col2">27.01.2025 - 04.05.2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div className="spacer" />
-
 
       <Footer />
     </div>

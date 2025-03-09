@@ -6,6 +6,20 @@ import "./Praktika.css";
 function Praktika() {
   const [selectedBtn, setSelectedBtn] = useState(0);
 
+  const [rows, setRows] = useState([
+    { group: "IS23", period: "27.01.2025 - 04.05.2025" },
+    { group: "IS24", period: "14.04.2025 - 08.06.2025" },
+    { group: "ITA21", period: "11.11.2024 - 13.04.2025" },
+    { group: "ITA22", period: "14.04.2025 - 15.06.2025" },
+    { group: "ITS21", period: "11.11.2024 - 13.04.2025" },
+    { group: "ITS22", period: "11.11.2024 - 02.02.2025" },
+    { group: "KTO", period: "24 03.02 2025 - 31.08 2025" },
+    { group: "UX23", period: "11.11.2024 - 22.12.2024" },
+    { group: "UX24", period: "31.03 2025 - 08.06 2025" },
+    { group: "VS23", period: "27.01.2025 - 04.05.2025" },
+    { group: "VS24", period: "07.04.2025 - 11.05.2025" },
+    { group: "Ärikool", period: "2024-2025" },
+  ]);
   return (
     <div className="bg-light">
       <NavigationBar />
@@ -81,10 +95,12 @@ function Praktika() {
             </tr>
           </thead>
           <tbody>
-            <tr style={{ height: "4rem" }}>
-              <td className="col1">IS23</td>
-              <td className="col2">27.01.2025 - 04.05.2025</td>
-            </tr>
+            {rows.map((row, index) => (
+              <tr key={index} style={{ height: "4rem" }}>
+                <td className="col1">{row.group}</td>
+                <td className="col2">{row.period}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

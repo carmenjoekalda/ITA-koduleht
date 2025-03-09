@@ -6,10 +6,10 @@ import Praktika from "./pages/Praktika";
 
 function App() {
   return (
-    <HashRouter basename="/ITA-koduleht">
+    <HashRouter>
       <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="praktika" element={<Praktika />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/praktika" element={<Praktika />} />
       </Routes>
     </HashRouter>
   );

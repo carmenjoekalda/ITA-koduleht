@@ -4,6 +4,10 @@ $dark: #1E1E1E;
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import '@fontsource/montserrat';
 
+html {
+  font-size: 0.6vw;
+}
+
 div.bg-light {
   background-color: $light !important; 
 }

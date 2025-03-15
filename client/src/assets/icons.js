@@ -115,25 +115,28 @@ export const ServerIcon = ({ fill = "#454545", ...props }) => (
     />
   </svg>
 );
-export const Arrow = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="50"
-    height="20"
-    viewBox="0 0 38 19"
-    fill="none"
-  >
-    <path
-      d="M1.73047 2L18.6246 17.6649"
-      stroke="#1E1E1E"
-      stroke-width="3"
-      stroke-linecap="round"
-    />
-    <path
-      d="M18.625 17.6649L35.5191 1.99998"
-      stroke="#1E1E1E"
-      stroke-width="3"
-      stroke-linecap="round"
-    />
-  </svg>
-);
+export const Arrow = ({ rotation = 0 }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="20"
+      viewBox="0 0 38 19"
+      fill="none"
+      style={{ transform: `rotate(${rotation}deg)` }} 
+    >
+      <path
+        d="M1.73047 2L18.6246 17.6649"
+        stroke="#1E1E1E"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <path
+        d="M18.625 17.6649L35.5191 1.99998"
+        stroke="#1E1E1E"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};

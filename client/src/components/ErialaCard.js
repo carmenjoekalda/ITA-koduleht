@@ -54,7 +54,7 @@ const ErialaCards = () => {
   const changePage = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+  if (erialaData.length === 0) return;
   return (
     <div>
       <div className="pagination justify-content-center  gap-4 mb-5">

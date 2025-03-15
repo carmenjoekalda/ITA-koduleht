@@ -51,7 +51,6 @@ function Erialad() {
           <div className="filter d-flex align-items-center justify-content-between px-4">
             Haridusnõue
             <Arrow />
-        
           </div>
           <div className="filter d-flex align-items-center justify-content-between px-4">
             Haridusnõue
@@ -63,7 +62,39 @@ function Erialad() {
           </div>
           <button className="filter-btn">Filtreeri</button>
         </div>
-
+        <div className="spacer" />
+        <div
+          className="d-flex flex-row border border-dark rounded-5"
+          style={{ height: "16.86vw", overflow: "hidden" }}
+        >
+          <div
+            className="bg-dark"
+            style={{ width: "20vw", flexShrink: 0 }}
+          ></div>
+          <div
+            className="flex-grow-1 d-flex flex-column" 
+            style={{ background: "#FBFBFB" }}
+          >
+            <div className="erialacard-top-bar"></div>
+            <div className="flex-grow-1 d-flex">
+              <div className="ps-5 pt-4" style={{ width: "40vw" }}>
+                <h3 className="erialacard-title">Eriala (kirjeldus)</h3>
+                <p className="erialacard-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
+                  massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                  sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                  Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+                  Vestibulum auctor ornare leo, non suscipit magna interdum eu.
+                </p>
+              </div>
+              <div className=" flex-grow-1 d-flex align-items-center justify-content-center">
+                <button className="erialacard-btn" style={{marginBottom: "1.875vw"}}>
+                    <p className="erialacard-btn-text m-0">Vastuvõtt avatakse ...</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="spacer" />
       </div>
       <Footer />

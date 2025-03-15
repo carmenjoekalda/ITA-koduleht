@@ -47,7 +47,7 @@ const erialaData = [
 ];
 const ErialaCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 2;
+  const itemsPerPage = 4;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = erialaData.slice(indexOfFirstItem, indexOfLastItem);
@@ -61,6 +61,7 @@ const ErialaCards = () => {
         <button
           className="page-switch-btn"
           onClick={() => changePage(currentPage - 1)}
+          disabled={currentPage === 1}  
         >
           <Arrow rotation={90} />
         </button>
@@ -70,6 +71,7 @@ const ErialaCards = () => {
         <button
           className="page-switch-btn"
           onClick={() => changePage(currentPage + 1)}
+          disabled={currentPage === Math.ceil(erialaData.length / itemsPerPage)}
         >
           <Arrow rotation={270} />
         </button>
@@ -129,10 +131,11 @@ const ErialaCards = () => {
         ))}
       </div>
       
-      <div className="pagination justify-content-center  gap-4 my-5">
+      <div className="pagination justify-content-center  gap-4 mt-5">
         <button
           className="page-switch-btn"
           onClick={() => changePage(currentPage - 1)}
+          disabled={currentPage === 1}  
         >
           <Arrow rotation={90} />
         </button>
@@ -142,6 +145,7 @@ const ErialaCards = () => {
         <button
           className="page-switch-btn"
           onClick={() => changePage(currentPage + 1)}
+          disabled={currentPage === Math.ceil(erialaData.length / itemsPerPage)}
         >
           <Arrow rotation={270} />
         </button>

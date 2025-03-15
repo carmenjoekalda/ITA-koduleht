@@ -1,8 +1,13 @@
 {
   "files": {
-    "main.css": "/ITA-koduleht/static/css/main.7dedda5e.css",
-    "main.js": "/ITA-koduleht/static/js/main.17ae4eb1.js",
+    "main.css": "/ITA-koduleht/static/css/main.815f6fd3.css",
+    "main.js": "/ITA-koduleht/static/js/main.28f7a173.js",
     "static/js/488.5dc00adb.chunk.js": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js",
+    "static/media/tunnustus suur.png": "/ITA-koduleht/static/media/tunnustus suur.9ea1b29832594b3e098f.png",
+    "static/media/pic1.png": "/ITA-koduleht/static/media/pic1.95331e17feee07caa474.png",
+    "static/media/pic2.png": "/ITA-koduleht/static/media/pic2.f4ae59aee3effb8125ef.png",
+    "static/media/pic3.png": "/ITA-koduleht/static/media/pic3.45d658b744038875bc5b.png",
+    "static/media/tunnustus.png": "/ITA-koduleht/static/media/tunnustus.278319fd311380309c57.png",
     "static/media/montserrat-latin-ext-400-normal.woff": "/ITA-koduleht/static/media/montserrat-latin-ext-400-normal.85beb71046499a27877f.woff",
     "static/media/montserrat-latin-ext-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-latin-ext-400-normal.1974241fa9a808c0c154.woff2",
     "static/media/vocolog.png": "/ITA-koduleht/static/media/vocolog.8848ba84232161df9cde.png",
@@ -15,12 +20,12 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.7da603c92e367751f991.woff2",
     "static/media/montserrat-vietnamese-400-normal.woff": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.c14d61c769222a9ee56c.woff",
     "index.html": "/ITA-koduleht/index.html",
-    "main.7dedda5e.css.map": "/ITA-koduleht/static/css/main.7dedda5e.css.map",
-    "main.17ae4eb1.js.map": "/ITA-koduleht/static/js/main.17ae4eb1.js.map",
+    "main.815f6fd3.css.map": "/ITA-koduleht/static/css/main.815f6fd3.css.map",
+    "main.28f7a173.js.map": "/ITA-koduleht/static/js/main.28f7a173.js.map",
     "488.5dc00adb.chunk.js.map": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7dedda5e.css",
-    "static/js/main.17ae4eb1.js"
+    "static/css/main.815f6fd3.css",
+    "static/js/main.28f7a173.js"
   ]
 }

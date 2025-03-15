@@ -4,6 +4,9 @@ $light: #FBFBFB;
 $dark: hsl(0, 0%, 12%); 
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+html {
+  font-size: 0.6vw; 
+}
 
 div.bg-light {
   background-color: $light !important; 

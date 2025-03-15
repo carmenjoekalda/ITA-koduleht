@@ -41,6 +41,8 @@ $dark: #1E1E1E;
     }
   
     select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
       height: 80%;
       font-weight: 400;
       font-family: 'Montserrat';
@@ -51,6 +53,10 @@ $dark: #1E1E1E;
       cursor: pointer;
       outline: none;
       background-color: $light;
+
+      option {
+        font-size: 0.8125rem;
+      }
   
   
       &:hover {
@@ -60,6 +66,68 @@ $dark: #1E1E1E;
       &:focus {
         border-color: #007bff;
         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+    }
+  }
+
+  .konsultatsioonid {
+
+
+    .dropdown-area {
+      background: #8A8A8A;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      height: 3rem;
+      width: 22%;
+      border: none;
+
+      select {
+        text-align: center;
+        border: none;
+        height: 70%;
+        background-color: #EEEEEE;
+      }
+    }
+
+    .table-area {
+
+      table {
+        border-radius: 10px;
+
+        thead {
+          background-color: #454545;
+          text-align: start;
+          height: 4rem;
+
+          h1 {
+            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 400;
+            font-family: 'Montserrat';
+            color: #fbfbfb;
+          }
+        }
+
+        tbody {
+          text-align: start;
+
+          tr {
+            height: 4rem;
+
+            td {
+              font-size: 1.25rem;
+              font-weight: 400;
+              font-family: 'Montserrat';
+              color: #000;
+            }
+          }
+
+          h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            font-family: 'Montserrat';
+            color: #1E1E1E;
+          }
+        }
       }
     }
   }
@@ -103,7 +171,6 @@ $dark: #1E1E1E;
       }
   
       tbody {
-        background-color: #FFFFFF;
         tr {
           height: 6.5rem;
   

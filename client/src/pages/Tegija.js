@@ -61,10 +61,11 @@ const Tegija = () => {
 
                     <TegijaTable events={events} aasta={aasta}/>
 
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-center mb-5'>
                         <button onClick={() => navigate('/voistlused')}>Kuva rohkem</button>
                     </div>
                 </div>
+                <div className='spacer'></div>
             </div>
 
 

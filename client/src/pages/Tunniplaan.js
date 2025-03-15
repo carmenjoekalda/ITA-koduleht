@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GroupSearch from '../components/GroupSearch';
 import LessonTable from '../components/LessonTable';
+import KonsultatsioonideFilter from '../components/KonsultatsioonideFilter';
+import KonsultatsioonideTabel from '../components/KonsultatsioonideTabel';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './Tunniplaan.scss';
@@ -22,6 +24,15 @@ const Tunniplaan = () => {
 
   const [group, setGroup] = useState('');
 
+  const ajad = [{ teacher: "Maret Vaabel", date: '15.03.2025', time: 'Kokkuleppel', room: "A407" },
+    { teacher: "Reet Kasepalu", date: '16.03.2025', time: 'Kokkuleppel', room: "A408" },
+    { teacher: "Aile Laats", date: '17.03.2025', time: 'Kokkuleppel', room: "A302" },
+    { teacher: "Risto Korb", date: '18.03.2025', time: 'Kokkuleppel', room: "A215" },
+    { teacher: "Margus Treumuth", date: '19.03.2025', time: 'Kokkuleppel', room: "A416" }
+  ];
+
+  const [teacher, setTeacher] = useState('');
+
   return (
     <div>
       <Navbar />
@@ -32,10 +43,16 @@ const Tunniplaan = () => {
           <GroupSearch setGroup={setGroup} />
 
           <LessonTable schedule={schedule} days={days} periods={periods} lesson_times={lesson_times} selected={group} />
-
+          <div className='spacer'></div>
+          <div className='line'></div>
+          <div className='konsultatsioonid'>
+            <h1 className='mt-5 mb-3'>Konsultatsioonid</h1>
+            <KonsultatsioonideFilter setTeacher={setTeacher} />
+            <KonsultatsioonideTabel ajad={ajad} teacher={teacher} />
+          </div>
         </div>
+        <div className='spacer'></div>
       </div>
-      <div className='spacer'></div>
       <Footer />
     </div>
 

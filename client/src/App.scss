@@ -4,6 +4,7 @@ $light: #FBFBFB;
 $dark: hsl(0, 0%, 12%); 
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import '@fontsource/montserrat';
 html {
   font-size: 0.6vw; 
 }
@@ -18,9 +19,10 @@ div.bg-dark{
 .custom-padding {
   padding-left: 10vw !important;
   padding-right: 10vw !important;
+  background-color: $light;
 }
 a, a:link, a:visited{
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-family: "Montserrat";  
   color: white; 
   margin-left: 1rem; 
@@ -34,13 +36,19 @@ a, a:link, a:visited{
 }
 
 .spacer{
-  min-height: 7.25rem;
+  min-height: calc(var(--space-unit) * 1);;
   background-color: $light;
 }
+
+.line {
+  border-top: 2px solid #1E1E1E;
+  width: 100%;
+}
+
 h1 {
   color: #1E1E1E;
   font-family: "Montserrat";
-  font-size: 3rem !important;
+  font-size: 2.1875rem !important;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -48,8 +56,9 @@ h1 {
 h4 {
   color: #000;
   font-family: "Montserrat";
-  font-size: 1.5rem !important; 
+  font-size: 1.5625rem !important; 
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 400 !important;
+  line-height: normal !important;
 }
+

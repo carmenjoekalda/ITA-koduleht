@@ -1,0 +1,15 @@
+.vajalikud-materjalid-top{
+    border-radius: 10px;
+    background: #757575;
+    height: 1rem;
+    border-radius: 0 10px 10px 0;
+    width: 100%;
+}
+.vajalikud-materjalid-btn{
+    display: block;
+    border-radius: 5px;
+    background: #5A5A5A;
+    width: 262.585px;
+    height: 61.259px;
+    flex-shrink: 0;
+}

@@ -5,7 +5,9 @@ import HomePage from './pages/Home';
 import Tegija from './pages/Tegija';
 import Voistlused from './pages/Voistlused';
 import Tunnustused from './pages/Tunnustused';
+import Tunnustus from './pages/Tunnustus';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           <Route path="/tegija" element={<Tegija />} />
           <Route path="/voistlused" element={<Voistlused />} />
           <Route path="/tunnustused" element={<Tunnustused />} />
+          <Route path="/tunnustus" element={<Tunnustus />} />
         </Routes>
       </BrowserRouter>
     </div>

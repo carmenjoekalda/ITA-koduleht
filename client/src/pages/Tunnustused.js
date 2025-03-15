@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SearchIcon } from "../assets/icons";
 import tunnustus from "../assets/tunnustus.png";
@@ -9,6 +10,8 @@ import Footer from '../components/Footer';
 import './Tunnustused.scss';
 
 const Tunnustused = () => {
+    const navigate = useNavigate();
+
     const tunnustused = [{ title: "Sündmuse nimetus", date: "06.12.24", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.", image: tunnustus },
     { title: "Sündmuse nimetus", date: "06.12.24", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.", image: tunnustus },
     { title: "Sündmuse nimetus", date: "06.12.24", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.", image: tunnustus },
@@ -38,7 +41,7 @@ const Tunnustused = () => {
                                 <img src={tunnustus.image} alt="tunnustus" className="px-3 py-2" />
                                 <div className="d-flex flex-column pe-3">
                                     <div className="d-flex flex-row justify-content-between pt-3">
-                                        <h4 className="m-0">{tunnustus.title}</h4>
+                                        <h4 className="m-0" onClick={() => navigate('/tunnustus')}>{tunnustus.title}</h4>
                                         <p>{tunnustus.date}</p>
                                     </div>
                                     <h3 className="m-0" style={{ width: '90%' }}>{tunnustus.description}</h3>

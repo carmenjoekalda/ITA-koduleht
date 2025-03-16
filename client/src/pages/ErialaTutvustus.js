@@ -1,4 +1,4 @@
-import React, { act } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import ErialaData from "../assets/ErialaData";
 import NavigationBar from "../components/Navbar";

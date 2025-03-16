@@ -140,3 +140,11 @@ export const Arrow = ({ rotation = 0 }) => {
     </svg>
   );
 };
+
+export const Circle = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61" fill="none">
+  <path d="M59.5 30.5C59.5 47.0764 46.2846 60.5 30 60.5C13.7154 60.5 0.5 47.0764 0.5 30.5C0.5 13.9236 13.7154 0.5 30 0.5C46.2846 0.5 59.5 13.9236 59.5 30.5Z" fill="#757575" stroke="#1E1E1E"/>
+</svg>
+  )
+}

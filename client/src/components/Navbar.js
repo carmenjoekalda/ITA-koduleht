@@ -48,7 +48,7 @@ function NavigationBar() {
 
       <Container fluid className="custom-padding bg-dark">
         <div className="d-flex align-items-center py-2 justify-content-between">
-          <a href="/" className="vocologo">
+          <a href="#/" className="vocologo">
             <img src={logo} alt="Logo" className="vocologo" />
           </a>
           <div className="d-flex ms-auto">

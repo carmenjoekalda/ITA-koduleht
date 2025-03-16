@@ -113,8 +113,8 @@ function ErialaTutvustus() {
               interdum eu.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="1" onClick={() => handleAccordion(1)}>
-            <Accordion.Header>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header onClick={() => handleAccordion(1)}>
               <div
                 style={{
                   display: "flex",
@@ -139,8 +139,8 @@ function ErialaTutvustus() {
               interdum eu.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2" onClick={() => handleAccordion(2)}>
-            <Accordion.Header>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header onClick={() => handleAccordion(2)}>
               <div
                 style={{
                   display: "flex",
@@ -165,8 +165,8 @@ function ErialaTutvustus() {
               interdum eu.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="3" onClick={() => handleAccordion(3)}>
-            <Accordion.Header>
+          <Accordion.Item eventKey="3">
+            <Accordion.Header onClick={() => handleAccordion(3)}>
               <div
                 style={{
                   display: "flex",
@@ -191,8 +191,8 @@ function ErialaTutvustus() {
               interdum eu.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="4" onClick={() => handleAccordion(4)}>
-            <Accordion.Header>
+          <Accordion.Item eventKey="4">
+            <Accordion.Header onClick={() => handleAccordion(4)}>
               <div
                 style={{
                   display: "flex",
@@ -218,9 +218,43 @@ function ErialaTutvustus() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <div className="spacer" />
+        <div style={{ height: "200px" }} />
 
-        
+        <div className="erialakont-container d-flex">
+          <div
+            className="w-50  d-flex flex-column"
+            style={{ borderRight: "solid 4px", borderColor: "#757575" }}
+          >
+            <div className="bg-dark text-center" style={{ height: "70px" }}>
+              <h1 className="text-white pt-4">It Akadeemia juht</h1>
+            </div>
+            <div className=" flex-grow-1 text-center">
+              <h1 className="mt-5 pb-4">Signe vedler</h1>
+              <p className="mb-5">
+                Pöörduda eriala ja õppekavaga seotud küsimuste korral
+              </p>
+              <p>5178966</p>
+              <p> signe.vedler@voco.ee</p>
+            </div>
+          </div>
+          <div className="  flex-grow-1"></div>
+          <div className="w-50  d-flex flex-column">
+            <div className="bg-dark text-center" style={{ height: "70px" }}>
+              <h1 className="text-white pt-4">Tugikeskuse juht</h1>
+            </div>
+            <div className=" flex-grow-1 text-center">
+              <h1 className="mt-5 pb-4">Helen Johanson</h1>
+              <p className="mb-5">
+                Pöörduda eriala ja õppekavaga seotud küsimuste korral
+              </p>
+              <p>58868004</p>
+              <p> helen.johanson@voco.ee</p>
+            </div>
+          </div>
+          <div className="  flex-grow-1"></div>
+        </div>
+
+        <div className="spacer" />
       </div>
       <Footer />
     </div>

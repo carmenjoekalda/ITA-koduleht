@@ -9,6 +9,8 @@ import Tegija from './pages/Tegija';
 import Voistlused from './pages/Voistlused';
 import Tunnustused from './pages/Tunnustused';
 import Tunnustus from './pages/Tunnustus';
+import Tunniplaan from './pages/Tunniplaan';
+import Kontakt from "./components/Kontakt";
 function App() {
   return (
     <HashRouter>
@@ -19,9 +21,10 @@ function App() {
         <Route path="/erialad/:id" element={<ErialaTutvustus/>}/>
         <Route path="/tegija" element={<Tegija />} />
         <Route path="/voistlused" element={<Voistlused />} />
-        <Route path="/tunniplaan" element={<Tunnustused />} />
+        <Route path="/tunniplaan" element={<Tunniplaan />} />
         <Route path="/tunnustused" element={<Tunnustused />} />
         <Route path="/tunnustus" element={<Tunnustus />} />
+        <Route path="/kontaktid" element={<Kontakt />} />
       </Routes>
     </HashRouter>
 

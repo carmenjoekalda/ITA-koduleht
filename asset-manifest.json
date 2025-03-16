@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/ITA-koduleht/static/css/main.917fe2bd.css",
-    "main.js": "/ITA-koduleht/static/js/main.8c617d3e.js",
+    "main.css": "/ITA-koduleht/static/css/main.37997bcf.css",
+    "main.js": "/ITA-koduleht/static/js/main.d6be29df.js",
     "static/js/488.5dc00adb.chunk.js": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js",
+    "static/media/Elp2.png": "/ITA-koduleht/static/media/Elp2.3bf68bfdd92486efa490.png",
     "static/media/tunnustus suur.png": "/ITA-koduleht/static/media/tunnustus suur.9ea1b29832594b3e098f.png",
     "static/media/pic1.png": "/ITA-koduleht/static/media/pic1.95331e17feee07caa474.png",
     "static/media/pic2.png": "/ITA-koduleht/static/media/pic2.f4ae59aee3effb8125ef.png",
@@ -21,12 +22,12 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.7da603c92e367751f991.woff2",
     "static/media/montserrat-vietnamese-400-normal.woff": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.c14d61c769222a9ee56c.woff",
     "index.html": "/ITA-koduleht/index.html",
-    "main.917fe2bd.css.map": "/ITA-koduleht/static/css/main.917fe2bd.css.map",
-    "main.8c617d3e.js.map": "/ITA-koduleht/static/js/main.8c617d3e.js.map",
+    "main.37997bcf.css.map": "/ITA-koduleht/static/css/main.37997bcf.css.map",
+    "main.d6be29df.js.map": "/ITA-koduleht/static/js/main.d6be29df.js.map",
     "488.5dc00adb.chunk.js.map": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.917fe2bd.css",
-    "static/js/main.8c617d3e.js"
+    "static/css/main.37997bcf.css",
+    "static/js/main.d6be29df.js"
   ]
 }

@@ -37,16 +37,19 @@ const Tunnustused = () => {
 
                     <div className="tunnustused-container">
                         {tunnustused.map((tunnustus, index) => (
+                            <a href="/tunnustus">
+
                             <div className="tunnustus d-flex align-items-start my-4" key={index}>
                                 <img src={tunnustus.image} alt="tunnustus" className="px-3 py-2" />
                                 <div className="d-flex flex-column pe-3">
                                     <div className="d-flex flex-row justify-content-between pt-3">
-                                        <h4 className="m-0" onClick={() => navigate('/tunnustus')}>{tunnustus.title}</h4>
+                                        <h4 className="m-0" >{tunnustus.title}</h4>
                                         <p>{tunnustus.date}</p>
                                     </div>
                                     <h3 className="m-0" style={{ width: '90%' }}>{tunnustus.description}</h3>
                                 </div>
                             </div>
+                            </a>
                         ))}
                     </div>
                     <div className="spacer"></div>

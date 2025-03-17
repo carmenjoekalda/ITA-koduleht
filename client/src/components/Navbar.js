@@ -16,9 +16,15 @@ function NavigationBar() {
       <Container fluid className="custom-padding">
         <div className="d-flex justify-content-between align-items-center py-3">
           <div className="d-flex align-items-center gap-3">
-            <FacebookIcon height="2rem" width="2rem" />
-            <TiktokIcon height="2rem" width="2rem" />
-            <InstagramIcon height="2rem" width="2rem" />
+            <a href="https://www.facebook.com/tartuvoco/">
+              <FacebookIcon height="2rem" width="2rem" />
+            </a>
+            <a href="https://www.tiktok.com/@tartuvoco">
+              <TiktokIcon height="2rem" width="2rem" />
+            </a>
+            <a href="https://www.instagram.com/tartuvoco/">
+              <InstagramIcon height="2rem" width="2rem" />
+            </a>
           </div>
 
           <div className="d-flex align-items-center">

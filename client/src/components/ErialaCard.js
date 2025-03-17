@@ -43,7 +43,11 @@ const ErialaCards = () => {
           const globalIndex = indexOfFirstItem + index;
 
           return (
-            <Link to={`/erialad/${globalIndex}`} key={globalIndex}>
+            <Link
+              to={`/erialad/${globalIndex}`}
+              key={globalIndex}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <div
                 className="d-flex flex-row border border-dark rounded-5"
                 style={{ height: "16.86vw", overflow: "hidden" }}

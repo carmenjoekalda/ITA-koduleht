@@ -3,29 +3,19 @@ import NavigationBar from "./Navbar";
 import Footer from "./Footer";
 import "./Kontakt.css";
 import { Circle } from "../assets/icons";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 function Kontakt() {
-  const teachers = [
-    {
-      name: "Peeter peterson",
-      role: "Õpetaja",
-      contact: "kontakt",
-      room: "Ruum",
-    },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-    { name: "Peeter", role: "Õpetaja", contact: "kontakt", room: "Ruum" },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-    { name: "Peeter", role: "Õpetaja", contact: "kontakt", room: "Ruum" },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-    { name: "Peeter", role: "Õpetaja", contact: "kontakt", room: "Ruum" },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-    { name: "Peeter", role: "Õpetaja", contact: "kontakt", room: "Ruum" },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-    { name: "Peeter", role: "Õpetaja", contact: "kontakt", room: "Ruum" },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-    { name: "Peeter", role: "Õpetaja", contact: "kontakt", room: "Ruum" },
-    { name: "Mari", role: "Õpetaja", contact: "mari kontakt", room: "105" },
-  ];
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("https://siseveeb.voco.ee/veebilehe_andmed/tootajad?section=ALL")
+      .then((response) => setData(response.data.employees))
+      .catch((error) => console.error("Error:", error));
+  }, []);
+
+  const Itaka = data ? data.filter((e) => e.department === "IT Akadeemia") : [];
   return (
     <>
       <NavigationBar />
@@ -60,29 +50,45 @@ function Kontakt() {
             className="d-flex flex-wrap"
             style={{ justifyContent: "space-between", gap: "7rem" }}
           >
-            {teachers.map((teacher, index) => (
-              <div className="teacher-box">
-                <div
-                  className="h-50 mb-4 pt-3 d-flex"
-                  style={{ borderBottom: "3px solid" }}
-                >
-                  <Circle />
-                  <div className="ps-3 pt-3">
-                    <h2 className="fw-bold mb-2">{teacher.name}</h2>
-                    <h3>{teacher.role}</h3>
+            {Itaka && Itaka.length > 0 ? (
+              Itaka.map((teacher, index) => (
+                <div className="teacher-box" key={index}>
+                  <div
+                    className="h-50 mb-4 pt-3 d-flex"
+                    style={{ borderBottom: "3px solid" }}
+                  >
+                    <Circle />
+                    <div className="ps-3 pt-3">
+                      <h2 className="fw-bold mb-2">
+                        {teacher.firstname} {teacher.lastname}
+                      </h2>
+                      <h3></h3>
+                    </div>
                   </div>
+                  <div>
+                    <p>{teacher.phone}</p>
+                    <p>{teacher.room}</p>
+                  </div>
+                  <div className="line mt-5" />
                 </div>
-                <div>
-                  <p>kontakt</p>
-                  <p>Ruum</p>
-                </div>
-                <div className="line mt-5" />
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>
+                Tundub et koolis enam töötajaid pole :( või siis su nett on
+                lihtsalt sitt
+              </p>
+            )}
             <div style={{ height: "20px", width: "100%" }}></div>
           </div>
         </div>
         <div className="spacer" />
+      </div>
+      <div>
+
+
+        {/* data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>} */}
+      
+      
       </div>
       <Footer />
     </>

@@ -11,6 +11,7 @@ import Tunnustused from './pages/Tunnustused';
 import Tunnustus from './pages/Tunnustus';
 import Tunniplaan from './pages/Tunniplaan';
 import Kontakt from "./components/Kontakt";
+import Test from "./pages/test";
 function App() {
   return (
     <HashRouter>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/tunnustused" element={<Tunnustused />} />
         <Route path="/tunnustus" element={<Tunnustus />} />
         <Route path="/kontaktid" element={<Kontakt />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </HashRouter>
 

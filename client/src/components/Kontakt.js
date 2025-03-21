@@ -86,7 +86,7 @@ function Kontakt() {
       <div>
 
 
-        {/* data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>} */}
+        {/* {data ? <pre>{JSON.stringify(data[0], null, 2)}</pre> : <p>Loading...</p>} */}
       
       
       </div>

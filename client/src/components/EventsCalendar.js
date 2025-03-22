@@ -3,8 +3,11 @@ import { Container } from "react-bootstrap";
 import "./EventsCalendar.css";
 import { ServerIcon, TableIcon } from "../assets/icons";
 import CalendarPage from "./CalendarTable";
+import { useAuth } from "../AuthContext";
 
 function EventsCalendar() {
+  const { isAuthenticated } = useAuth();
+
   const [activePage, setActivePage] = useState(1);
 
   const EventInfo = ({ title, date, heading, description }) => {
@@ -26,22 +29,31 @@ function EventsCalendar() {
       </div>
     );
   };
+
   return (
     <div className="custom-padding">
       <Container fluid className="mt-3">
         <div className="d-flex justify-content-between">
           <h1>Sündmuste kalender</h1>
           <div className="d-flex align-items-end ml-auto">
+            {isAuthenticated && (
+              <button
+                className="page1-btn"
+                style={{ width: "4rem", borderTopLeftRadius: "3px" }}
+              >
+                <h1>+</h1>
+              </button>
+            )}
             <button
               className="page1-btn"
               onClick={() => setActivePage(1)}
               style={{
                 width: "12rem",
-                borderTopLeftRadius: "0.4rem",
+                borderTopLeftRadius: isAuthenticated ? "0rem" : "1rem",
               }}
             >
               <ServerIcon
-              height={"2.5rem"}
+                height={"2.5rem"}
                 fill={
                   activePage === 1
                     ? "hsla(0, 0%, 12%, 1)"
@@ -60,7 +72,7 @@ function EventsCalendar() {
               }}
             >
               <TableIcon
-              height={"2.5rem"}
+                height={"2.5rem"}
                 fill={
                   activePage === 2
                     ? "hsla(0, 0%, 98%, 1)"

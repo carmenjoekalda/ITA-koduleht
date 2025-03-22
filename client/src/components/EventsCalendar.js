@@ -10,6 +10,22 @@ function EventsCalendar() {
 
   const [activePage, setActivePage] = useState(1);
 
+  const [events, setEvents] = useState([
+    {
+      title: "Ita 23",
+      date: "15.12.23",
+      heading: "Sündmuse nimi",
+      description:
+        "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
+    },
+    {
+      title: "Ita 22",
+      date: "12.11.23",
+      heading: "Sündmuse nimi 2",
+      description:
+        "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
+    },
+  ]);
   const EventInfo = ({ title, date, heading, description }) => {
     return (
       <div>
@@ -29,6 +45,18 @@ function EventsCalendar() {
       </div>
     );
   };
+  const addEvent = () => {
+    setEvents([
+      ...events,
+      {
+        title: "Ita 22",
+        date: "12.11.23",
+        heading: "Sündmuse nimi 2",
+        description:
+          "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
+      },
+    ]);
+  };
 
   return (
     <div className="custom-padding">
@@ -38,6 +66,7 @@ function EventsCalendar() {
           <div className="d-flex align-items-end ml-auto">
             {isAuthenticated && (
               <button
+                onClick={addEvent}
                 className="page1-btn"
                 style={{ width: "4rem", borderTopLeftRadius: "3px" }}
               >
@@ -95,42 +124,15 @@ function EventsCalendar() {
             </div>
 
             <div className="d-flex flex-column p-4 page1-box">
-              <EventInfo
-                title="Ita 23"
-                date="15.12.23"
-                heading="Sündmuse nimi"
-                description="Konkreetse sündmuse juures on kirjas nimetus, 
-                toimumise aeg ja koht ning võimalus panna kirja  
-                sündmusega seotud õppegrupi tähis  või kogu osakonnale 
-                mõeldud ürituse korral märge kogu osakonnale.  "
-              />
-              <EventInfo
-                title="Ita 23"
-                date="15.12.23"
-                heading="Sündmuse nimi"
-                description="Konkreetse sündmuse juures on kirjas nimetus, 
-                toimumise aeg ja koht ning võimalus panna kirja  
-                sündmusega seotud õppegrupi tähis  või kogu osakonnale 
-                mõeldud ürituse korral märge kogu osakonnale.  "
-              />
-              <EventInfo
-                title="Ita 23"
-                date="15.12.23"
-                heading="Sündmuse nimi"
-                description="Konkreetse sündmuse juures on kirjas nimetus, 
-                toimumise aeg ja koht ning võimalus panna kirja  
-                sündmusega seotud õppegrupi tähis  või kogu osakonnale 
-                mõeldud ürituse korral märge kogu osakonnale.  "
-              />
-              <EventInfo
-                title="Ita 23"
-                date="15.12.23"
-                heading="Sündmuse nimi"
-                description="Konkreetse sündmuse juures on kirjas nimetus, 
-                toimumise aeg ja koht ning võimalus panna kirja  
-                sündmusega seotud õppegrupi tähis  või kogu osakonnale 
-                mõeldud ürituse korral märge kogu osakonnale.  "
-              />
+              {events.map((event, index) => (
+                <EventInfo
+                  key={index}
+                  title={event.title}
+                  date={event.date}
+                  heading={event.heading}
+                  description={event.description}
+                />
+              ))}
             </div>
           </div>
         ) : (

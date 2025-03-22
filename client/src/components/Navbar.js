@@ -7,10 +7,14 @@ import {
   InstagramIcon,
   SearchIcon,
 } from "../assets/icons";
+import { useAuth } from "../AuthContext";
 
 function NavigationBar() {
   const [query, setQuery] = useState("");
-
+  const { isAuthenticated, logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+  };
   return (
     <>
       <Container fluid className="custom-padding">
@@ -64,6 +68,13 @@ function NavigationBar() {
             <a href="#/tegija">Kutsemeistrivõistlused</a>
             <a href="#/tunnustused">Tunnustused</a>
             <a href="#/kontaktid">Kontaktid</a>
+            {isAuthenticated && (
+              <>
+                <button className="btn btn-danger" onClick={handleLogout}>
+                  Logout
+                </button>
+              </>
+            )}
           </div>
         </div>
       </Container>

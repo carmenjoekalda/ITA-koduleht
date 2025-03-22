@@ -83,10 +83,11 @@ export const SearchIcon = (props) => (
     <line x1="16" y1="16" x2="20" y2="20" strokeLinecap="round" />
   </svg>
 );
-export const TableIcon = ({ fill = "#FBFBFB", ...props }) => (
+export const TableIcon = ({ fill = "#FBFBFB", height=28, ...props }) => (
+
   <svg
-    width="30"
-    height="28"
+    width={height * 1.1}
+    height={height}
     viewBox="0 0 30 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +101,10 @@ export const TableIcon = ({ fill = "#FBFBFB", ...props }) => (
     />
   </svg>
 );
-export const ServerIcon = ({ fill = "#454545", ...props }) => (
+export const ServerIcon = ({ fill = "#454545", height = 28, ...props }) => (
   <svg
-    width="34"
-    height="28"
+    width= {height * 1.2}
+    height={height}
     viewBox="0 0 34 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

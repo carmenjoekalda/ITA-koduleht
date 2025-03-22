@@ -41,6 +41,7 @@ function EventsCalendar() {
               }}
             >
               <ServerIcon
+              height={"2.5rem"}
                 fill={
                   activePage === 1
                     ? "hsla(0, 0%, 12%, 1)"
@@ -59,6 +60,7 @@ function EventsCalendar() {
               }}
             >
               <TableIcon
+              height={"2.5rem"}
                 fill={
                   activePage === 2
                     ? "hsla(0, 0%, 98%, 1)"

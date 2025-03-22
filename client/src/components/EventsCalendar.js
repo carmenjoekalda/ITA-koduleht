@@ -12,29 +12,55 @@ function EventsCalendar() {
 
   const [events, setEvents] = useState([
     {
-      title: "Ita 23",
+      id: 1,
+      group: "Ita 23",
       date: "15.12.23",
       heading: "Sündmuse nimi",
       description:
         "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
     },
     {
-      title: "Ita 22",
+      id: 2,
+      group: "Ita 22",
       date: "12.11.23",
       heading: "Sündmuse nimi 2",
       description:
         "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
     },
   ]);
-  const EventInfo = ({ title, date, heading, description }) => {
+
+  const addEvent = () => {
+    setEvents([
+      ...events,
+      {
+        id: events.length + 1,
+        group: "Ita 22",
+        date: "12.11.23",
+        heading: "Sündmuse nimi 2",
+        description:
+          "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
+      },
+    ]);
+  };
+
+  const removeEvent = (id) => {
+    setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
+  };
+
+  const EventInfo = ({ id, date, heading, group, description, onRemove }) => {
     return (
       <div>
         <div className="d-flex">
           <div className="me-5">
-            <h3>{title}</h3>
+            <h3>{group}</h3>
           </div>
           <div>
             <h3>{date}</h3>
+          </div>
+          <div className="mt-5" style={{ position: "absolute", left: "85vw" }}>
+            <button onClick={() => onRemove(id)} className="btn btn-danger">
+              x
+            </button>
           </div>
         </div>
 
@@ -44,18 +70,6 @@ function EventsCalendar() {
         <p className="text-body mb-5">{description}</p>
       </div>
     );
-  };
-  const addEvent = () => {
-    setEvents([
-      ...events,
-      {
-        title: "Ita 22",
-        date: "12.11.23",
-        heading: "Sündmuse nimi 2",
-        description:
-          "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
-      },
-    ]);
   };
 
   return (
@@ -111,8 +125,9 @@ function EventsCalendar() {
             </button>
           </div>
         </div>
+
         {activePage === 1 ? (
-          //Page 1
+          // Page 1
           <div className="page-container">
             <div className="page1-top d-flex justify-content-between align-items-center px-4">
               <h2>Kõik õppegruppid</h2>
@@ -124,19 +139,21 @@ function EventsCalendar() {
             </div>
 
             <div className="d-flex flex-column p-4 page1-box">
-              {events.map((event, index) => (
+              {events.map((event) => (
                 <EventInfo
-                  key={index}
-                  title={event.title}
+                  key={event.id}
+                  id={event.id}
+                  group={event.group}
                   date={event.date}
                   heading={event.heading}
                   description={event.description}
+                  onRemove={removeEvent}
                 />
               ))}
             </div>
           </div>
         ) : (
-          //Page 2
+          // Page 2
           <CalendarPage />
         )}
       </Container>

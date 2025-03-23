@@ -190,10 +190,11 @@ const CalendarTable = ({ currentDate, events }) => {
                       }}
                     >
                       {eventsForDay.length > 0 && (
-                        <div className="events">
+                        <div style={{ textAlign: "left" }} className="ps-2">
+                          {day.day}
                           {eventsForDay.map((event, index) => (
-                            <div key={index} className="event-item">
-                              {event.heading}
+                            <div key={index} className="event pb-4 pe-0 m-0">
+                              <h2 className="p-0">{event.heading}</h2>
                             </div>
                           ))}
                         </div>

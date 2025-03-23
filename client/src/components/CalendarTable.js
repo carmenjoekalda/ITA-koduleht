@@ -46,7 +46,7 @@ const CalendarPage = () => {
               onClick={handlePrev}
             ></button>
             <div className="page2-month-selector mx-2">
-              <h2>{months[monthIndex]}</h2>
+              <h3>{months[monthIndex]}</h3>
             </div>
             <button
               className="triangle-btn right ms-2"
@@ -59,7 +59,7 @@ const CalendarPage = () => {
             className="search p-2 ms-2"
           />
         </div>
-        <h1 className="page2-text">{currentYear}</h1>
+        <h1 className="page2-text p-0">{currentYear}</h1>
       </div>
       <CalendarTable currentDate={currentDate} />
     </div>

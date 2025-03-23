@@ -1,14 +1,24 @@
-import React from 'react';
+const LessonSchedule = ({ schedule, days, periods, lesson_times, selectedGroup, weekOffset }) => {
+    const getWeekDates = (offset) => {
+        const today = new Date();
+        const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1 + offset * 7));
+        return days.map((_, index) => {
+            const date = new Date(startOfWeek);
+            date.setDate(startOfWeek.getDate() + index);
+            return date.toISOString().split('T')[0]; 
+        });
+    };
 
-const LessonTable = ({ schedule, days, periods, lesson_times, selected }) => {
+    const weekDates = getWeekDates(weekOffset);
+
     return (
         <div className='table-area'>
             <table>
                 <thead>
                     <tr>
                         <th>Tund</th>
-                        {days.map((day) => (
-                            <th key={day}>{day}</th>
+                        {weekDates.map((date, index) => (
+                            <th key={date}>{days[index]} ({date})</th>
                         ))}
                     </tr>
                 </thead>
@@ -16,10 +26,17 @@ const LessonTable = ({ schedule, days, periods, lesson_times, selected }) => {
                     {periods.map((period) => (
                         <tr key={period}>
                             <td>{period}</td>
-                            {days.map((day) => {
-                                const lesson = schedule.find((item) => item.day === day && period === item.times && item.group === selected);
+                            {weekDates.map((date, index) => {
+                                const lesson = schedule.find(
+                                    (item) =>
+                                        item.date === date &&
+                                        item.day === days[index] &&
+                                        period === item.times &&
+                                        item.group === selectedGroup
+                                );
+
                                 return (
-                                    <td key={day}>
+                                    <td key={date}>
                                         {lesson && (
                                             <div className='lesson'>
                                                 <p>{lesson_times[lesson.times]}</p>
@@ -37,6 +54,6 @@ const LessonTable = ({ schedule, days, periods, lesson_times, selected }) => {
             </table>
         </div>
     );
-}
+};
 
-export default LessonTable;
+export default LessonSchedule;

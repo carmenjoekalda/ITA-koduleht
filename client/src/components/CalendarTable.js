@@ -22,7 +22,7 @@ const CalendarPage = () => {
     "Detsember",
   ];
   const { events, setEvents } = useEvents();
-  
+
   const handlePrev = () => {
     setCurrentDate((prev) => {
       const newDate = new Date(prev);
@@ -62,17 +62,14 @@ const CalendarPage = () => {
             className="search p-2 ms-2"
           />
         </div>
-        {events.map((event, index) => (
-          <h1>{event.heading}</h1>
-        ))};
         <h1 className="page2-text p-0">{currentYear}</h1>
       </div>
-      <CalendarTable currentDate={currentDate} />
+      <CalendarTable currentDate={currentDate} events={events} />
     </div>
   );
 };
 
-const CalendarTable = ({ currentDate }) => {
+const CalendarTable = ({ currentDate, events }) => {
   const [calendarDays, setCalendarDays] = useState([]);
 
   useEffect(() => {
@@ -135,6 +132,26 @@ const CalendarTable = ({ currentDate }) => {
     "Laupäev",
     "Pühapäev",
   ];
+  const stringToDate = (dateString) => {
+    return new Date(dateString);
+  };
+
+  const getEventForDate = (date) => {
+    const targetDate = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate()
+    );
+
+    return events.filter((event) => {
+      const eventDate = stringToDate(event.date);
+      return (
+        eventDate.getDate() === targetDate.getDate() &&
+        eventDate.getMonth() === targetDate.getMonth() &&
+        eventDate.getFullYear() === targetDate.getFullYear()
+      );
+    });
+  };
 
   return (
     <div>
@@ -157,20 +174,33 @@ const CalendarTable = ({ currentDate }) => {
             <tr key={rowIndex}>
               {calendarDays
                 .slice(rowIndex * 7, (rowIndex + 1) * 7)
-                .map((day, colIndex) => (
-                  <td
-                    key={colIndex}
-                    className={`strong-border ${
-                      day.isCurrentMonth ? "current-month" : "non-current-month"
-                    }`}
-                    style={{
-                      height: "100px",
-                      position: "relative",
-                    }}
-                  >
-                    <div className="date-number">{day.day}</div>
-                  </td>
-                ))}
+                .map((day, colIndex) => {
+                  const eventsForDay = getEventForDate(day.date);
+                  return (
+                    <td
+                      key={colIndex}
+                      className={`strong-border ${
+                        day.isCurrentMonth
+                          ? "current-month"
+                          : "non-current-month"
+                      }`}
+                      style={{
+                        height: "100px",
+                        position: "relative",
+                      }}
+                    >
+                      {eventsForDay.length > 0 && (
+                        <div className="events">
+                          {eventsForDay.map((event, index) => (
+                            <div key={index} className="event-item">
+                              {event.heading}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </td>
+                  );
+                })}
             </tr>
           ))}
         </tbody>

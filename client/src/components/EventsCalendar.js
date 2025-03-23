@@ -4,30 +4,14 @@ import "./EventsCalendar.css";
 import { ServerIcon, TableIcon } from "../assets/icons";
 import CalendarPage from "./CalendarTable";
 import { useAuth } from "../AuthContext";
+import { useEvents } from "./EventContext";
 
 function EventsCalendar() {
   const { isAuthenticated } = useAuth();
 
   const [activePage, setActivePage] = useState(1);
 
-  const [events, setEvents] = useState([
-    {
-      id: 1,
-      group: "Ita 23",
-      date: "2025-03-20",
-      heading: "Sündmuse nimi",
-      description:
-        "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
-    },
-    {
-      id: 2,
-      group: "Ita 22",
-      date: "2025-03-21",
-      heading: "Sündmuse nimi 2",
-      description:
-        "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
-    },
-  ]);
+  const { events, setEvents } = useEvents();
 
   const addEvent = () => {
     setEvents([

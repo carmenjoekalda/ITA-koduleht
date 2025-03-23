@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./EventsCalendar.css";
+import { useEvents } from "./EventContext";
 
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -20,6 +21,8 @@ const CalendarPage = () => {
     "November",
     "Detsember",
   ];
+  const { events, setEvents } = useEvents();
+  
   const handlePrev = () => {
     setCurrentDate((prev) => {
       const newDate = new Date(prev);
@@ -59,6 +62,9 @@ const CalendarPage = () => {
             className="search p-2 ms-2"
           />
         </div>
+        {events.map((event, index) => (
+          <h1>{event.heading}</h1>
+        ))};
         <h1 className="page2-text p-0">{currentYear}</h1>
       </div>
       <CalendarTable currentDate={currentDate} />

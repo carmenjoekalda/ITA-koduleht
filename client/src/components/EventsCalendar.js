@@ -36,7 +36,7 @@ function EventsCalendar() {
         id: events.length + 1,
         group: "Ita 22",
         date: "12.11.23",
-        heading: "Sündmuse nimi 2",
+        heading: `Sündmuse nimi ${events.length + 1}`,
         description:
           "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
       },
@@ -47,15 +47,7 @@ function EventsCalendar() {
     setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
   };
 
-  const EventInfo = ({
-    id,
-    date,
-    heading,
-    group,
-    description,
-    onRemove,
-    isAuthenticated,
-  }) => {
+  const EventInfo = ({ id, date, heading, group, description, onRemove }) => {
     const [isEditing, setIsEditing] = useState({
       group: false,
       date: false,
@@ -87,6 +79,25 @@ function EventsCalendar() {
       setIsEditing((prev) => ({ ...prev, [field]: false }));
     };
 
+    if (!isAuthenticated) {
+      return (
+        <div>
+          <div className="d-flex">
+            <div className="me-5">
+              <h3>{group}</h3>
+            </div>
+            <div>
+              <h3>{date}</h3>
+            </div>
+          </div>
+
+          <hr className="mt-1 mb-3" />
+
+          <h2 className="fs-3 mb-3">{heading}</h2>
+          <p className="text-body mb-5">{description}</p>
+        </div>
+      );
+    }
     return (
       <div>
         <div className="d-flex">

@@ -47,27 +47,142 @@ function EventsCalendar() {
     setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
   };
 
-  const EventInfo = ({ id, date, heading, group, description, onRemove }) => {
+  const EventInfo = ({
+    id,
+    date,
+    heading,
+    group,
+    description,
+    onRemove,
+    isAuthenticated,
+  }) => {
+    const [isEditing, setIsEditing] = useState({
+      group: false,
+      date: false,
+      title: false,
+      description: false,
+    });
+
+    const [eventData, setEventData] = useState({
+      group,
+      date,
+      title: heading,
+      description,
+    });
+
+    const handleEdit = (field) => {
+      setIsEditing((prev) => ({ ...prev, [field]: true }));
+    };
+
+    const handleChange = (e, field) => {
+      setEventData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
+    const handleKeyDown = (e, field) => {
+      if (e.key === "Enter") {
+        setIsEditing((prev) => ({ ...prev, [field]: false }));
+      }
+    };
+
+    const handleBlur = (field) => {
+      setIsEditing((prev) => ({ ...prev, [field]: false }));
+    };
+
     return (
       <div>
         <div className="d-flex">
           <div className="me-5">
-            <h3>{group}</h3>
+            {isEditing.group ? (
+              <input
+                type="text"
+                value={eventData.group}
+                onChange={(e) => handleChange(e, "group")}
+                onKeyDown={(e) => handleKeyDown(e, "group")}
+                onBlur={() => handleBlur("group")}
+                autoFocus
+                className="form-control"
+              />
+            ) : (
+              <h3
+                onClick={() => handleEdit("group")}
+                style={{ cursor: "pointer" }}
+              >
+                {eventData.group}
+              </h3>
+            )}
           </div>
           <div>
-            <h3>{date}</h3>
+            {isEditing.date ? (
+              <input
+                type="text"
+                value={eventData.date}
+                onChange={(e) => handleChange(e, "date")}
+                onKeyDown={(e) => handleKeyDown(e, "date")}
+                onBlur={() => handleBlur("date")}
+                autoFocus
+                className="form-control"
+              />
+            ) : (
+              <h3
+                onClick={() => handleEdit("date")}
+                style={{ cursor: "pointer" }}
+              >
+                {eventData.date}
+              </h3>
+            )}
           </div>
-        {isAuthenticated &&  <div className="mt-5" style={{ position: "absolute", left: "85vw" }}>
-            <button onClick={() => onRemove(id)} className="btn btn-danger">
-              x
-            </button>
-          </div>}
+          {isAuthenticated && (
+            <div
+              className="mt-5"
+              style={{ position: "absolute", left: "85vw" }}
+            >
+              <button onClick={() => onRemove(id)} className="btn btn-danger">
+                x
+              </button>
+            </div>
+          )}
         </div>
 
         <hr className="mt-1 mb-3" />
 
-        <h2 className="fs-3 mb-3">{heading}</h2>
-        <p className="text-body mb-5">{description}</p>
+        {isEditing.title ? (
+          <input
+            type="text"
+            value={eventData.title}
+            onChange={(e) => handleChange(e, "title")}
+            onKeyDown={(e) => handleKeyDown(e, "title")}
+            onBlur={() => handleBlur("title")}
+            autoFocus
+            className="form-control fs-3 mb-3"
+          />
+        ) : (
+          <h2
+            className="fs-3 mb-3"
+            onClick={() => handleEdit("title")}
+            style={{ cursor: "pointer" }}
+          >
+            {eventData.title}
+          </h2>
+        )}
+
+        {isEditing.description ? (
+          <input
+            type="text"
+            value={eventData.description}
+            onChange={(e) => handleChange(e, "description")}
+            onKeyDown={(e) => handleKeyDown(e, "description")}
+            onBlur={() => handleBlur("description")}
+            autoFocus
+            className="form-control"
+          />
+        ) : (
+          <p
+            className="text-body mb-5"
+            onClick={() => handleEdit("description")}
+            style={{ cursor: "pointer" }}
+          >
+            {eventData.description}
+          </p>
+        )}
       </div>
     );
   };

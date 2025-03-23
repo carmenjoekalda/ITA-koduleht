@@ -14,7 +14,7 @@ function EventsCalendar() {
     {
       id: 1,
       group: "Ita 23",
-      date: "15.12.23",
+      date: "2025-03-20",
       heading: "Sündmuse nimi",
       description:
         "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
@@ -22,7 +22,7 @@ function EventsCalendar() {
     {
       id: 2,
       group: "Ita 22",
-      date: "12.11.23",
+      date: "2025-03-21",
       heading: "Sündmuse nimi 2",
       description:
         "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
@@ -35,7 +35,7 @@ function EventsCalendar() {
       {
         id: events.length + 1,
         group: "Ita 22",
-        date: "12.11.23",
+        date: "2025-03-22",
         heading: `Sündmuse nimi ${events.length + 1}`,
         description:
           "Konkreetse sündmuse juures on kirjas nimetus, toimumise aeg ja koht ning võimalus panna kirja sündmusega seotud õppegrupi tähis või kogu osakonnale mõeldud ürituse korral märge kogu osakonnale.",
@@ -124,7 +124,7 @@ function EventsCalendar() {
           <div>
             {isEditing.date ? (
               <input
-                type="text"
+                type="date"
                 value={eventData.date}
                 onChange={(e) => handleChange(e, "date")}
                 onKeyDown={(e) => handleKeyDown(e, "date")}

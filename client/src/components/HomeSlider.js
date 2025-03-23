@@ -12,11 +12,12 @@ function HomeSlider() {
         height: "50rem",
       }}
     >
-      <div style={{ marginTop: "45rem" }}>
+      
+      <div style={{ marginTop: "45rem"}}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="197"
-          height="39"
+          width= "15rem"
+          height="4rem"
           viewBox="0 0 197 39"
           fill="none"
         >

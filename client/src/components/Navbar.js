@@ -32,7 +32,7 @@ function NavigationBar() {
           </div>
 
           <div className="d-flex align-items-center">
-            <span className="fw-normal me-4 fs-5" >ENG</span>
+            <span className="fw-normal me-4 fs-5">ENG</span>
             <div className="position-relative" style={{ width: "300px" }}>
               <input
                 type="text"

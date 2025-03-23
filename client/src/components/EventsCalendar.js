@@ -57,11 +57,11 @@ function EventsCalendar() {
           <div>
             <h3>{date}</h3>
           </div>
-          <div className="mt-5" style={{ position: "absolute", left: "85vw" }}>
+        {isAuthenticated &&  <div className="mt-5" style={{ position: "absolute", left: "85vw" }}>
             <button onClick={() => onRemove(id)} className="btn btn-danger">
               x
             </button>
-          </div>
+          </div>}
         </div>
 
         <hr className="mt-1 mb-3" />

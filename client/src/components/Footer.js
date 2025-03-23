@@ -8,17 +8,17 @@ function Footer() {
         <div className="d-flex align-items-center py-5 justify-content-between">
           <img src={logo} alt="Logo" className="vocologo" />
           <div className="info">
-                <h1 style={{ color: "#FBFBFB" }}>Kontakt</h1>
-                <h4>info@voco.ee</h4>
+                <h1 style={{ color: "#FBFBFB" }} className="mt-4 pb-4">Kontakt</h1>
+                <h4 clas>info@voco.ee</h4>
                 <h4>7 361 810</h4>
             </div>
             <div>
-                <h1 style={{ color: "#FBFBFB" }}>Voco</h1>
+                <h1 style={{ color: "#FBFBFB" }}  className="mt-4 pb-4">Voco</h1>
                 <h4>Kopli 1</h4>
                 <h4>Tartu 50115 Eesti</h4>
             </div>
             <div>
-                <h1 style={{ color: "#FBFBFB" }}>Privaatsustingimused</h1>
+                <h1 style={{ color: "#FBFBFB" }}  className="mt-4 pb-4">Privaatsustingimused</h1>
                 <h4>Andmekaitse</h4>
                 <h4>Küpsised</h4>
             </div>

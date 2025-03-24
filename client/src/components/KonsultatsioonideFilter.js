@@ -10,6 +10,7 @@ const KonsultatsioonideFilter = ({ setTeacher }) => {
             try {
                 const response = await fetch('https://siseveeb.voco.ee/veebilehe_andmed/konsultatsioonid?hoone=KPL&aasta=2024');
                 const data = await response.json();
+
                 const teacherList = [...new Set(data.konsultatsioonid.map((item) => item.opetaja))];
 
                 setTeachers(teacherList);

@@ -22,14 +22,19 @@ function Kontakt() {
   const Itaka = filteredData
     ? filteredData.filter((e) => e.department === "IT Akadeemia")
     : [];
-  const removeContact = (fullName) => {
-    setFilteredData((prevData) => {
-      const updatedData = prevData.filter(
-        (employee) => `${employee.firstname} ${employee.lastname}` !== fullName
-      );
-      console.log("Updated data after removal:", updatedData);
-      return updatedData;
-    });
+  const removeContact = (firstname, fullName) => {
+    const isConfirmed = window.confirm(`Aga mis  ${firstname}st saab?`);
+
+    if (isConfirmed) {
+      setFilteredData((prevData) => {
+        const updatedData = prevData.filter(
+          (employee) =>
+            `${employee.firstname} ${employee.lastname}` !== fullName
+        );
+        console.log("Updated data after removal:", updatedData);
+        return updatedData;
+      });
+    }
   };
 
   return (
@@ -112,18 +117,22 @@ function Kontakt() {
                   <button
                     className="remove-btn"
                     onClick={() =>
-                      removeContact(`${teacher.firstname} ${teacher.lastname}`)
+                      removeContact(
+                        teacher.firstname,
+                        `${teacher.firstname} ${teacher.lastname}`
+                      )
                     }
                     style={{
-                      marginTop: "10px",
+                      marginTop: "-20px",
                       padding: "5px 10px",
                       backgroundColor: "red",
                       color: "white",
+                      borderRadius: "10px",
                       border: "none",
                       cursor: "pointer",
                     }}
                   >
-                    Eemalda
+                    Vallanda
                   </button>
                 </div>
               ))

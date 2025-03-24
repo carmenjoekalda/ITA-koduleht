@@ -12,8 +12,8 @@ const KonsultatsioonideTabel = ({ teacher }) => {
           "https://siseveeb.voco.ee/veebilehe_andmed/konsultatsioonid?hoone=KPL&aasta=2024"
         );
         const data = await response.json();
-        const completeData = data.konsultatsioonid.filter(
-          (item) =>
+        const completeData = data.konsultatsioonid.filter((item) => {
+          const isValid =
             item.kuupaevad &&
             item.kuupaevad.length > 0 &&
             item.opetaja &&
@@ -21,8 +21,14 @@ const KonsultatsioonideTabel = ({ teacher }) => {
             item.aeg &&
             item.aeg.trim() !== "" &&
             item.ruum &&
-            item.ruum.trim() !== ""
-        );
+            item.ruum.trim() !== "";
+          const currentDate = new Date();
+          const isFutureDate = item.kuupaevad.some(
+            (dateStr) => new Date(dateStr) > currentDate
+          );
+
+          return isValid && isFutureDate;
+        });
 
         setAjad(completeData);
         setLoading(false);

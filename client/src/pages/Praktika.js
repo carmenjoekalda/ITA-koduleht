@@ -70,19 +70,57 @@ function Praktika() {
 
           {selectedBtn === 0 && (
             <div>
-              <h1 style={{ marginBottom: "2.375rem" }}>Praktika</h1>
+              <p className="mb-4 p-0 fw-bold" style={{ fontSize: "4rem" }}>
+                Praktika ja õppimine välismaal
+              </p>
               <p>
-                Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
-                kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
-                praktika kohta. Tutvustustav tekst praktika kohta. Tutvustustav
-                tekst praktika kohta. Tutvustustav tekst praktika kohta.
-                Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
-                kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
-                praktika kohta. Tutvustustav tekst praktika kohta. Tutvustustav
-                tekst praktika kohta. Tutvustustav tekst praktika kohta.
-                Tutvustustav tekst praktika kohta. Tutvustustav tekst praktika
-                kohta. Tutvustustav tekst praktika kohta. Tutvustustav tekst
-                praktika kohta. Tutvustustav tekst praktika kohta.
+                Oleme rahvusvahelisusele avatud haridusasutus ja aktiivne
+                partner koostööprojektides. Alates 2016. aastast liitusime
+                õpirände hartaga ning 2021. aastal omistati Tartu Rakenduslikule
+                Kolledžile Erasmus+ õpirände akrediteering, mis tähendab, et
+                perioodil 2021 – 2027 saab kool lihtsustatud korras toetust uute
+                õpirännete rahastamiseks.
+              </p>
+              <h2 className="fw-bold my-4">Mis on õpiränne?</h2>
+              <p>
+                Õpiränne tähendab välismaal toimuvat praktikaperioodi või koos
+                grupiga õppetöö sooritamist mõnes meie partnerkoolis välismaal.
+                Välispraktikale saavad kandideerida kõik VOCO õpilased,
+                sõltumata erialast või õppevormist. Sõltumata sellest, kas lähed
+                välismaale praktikale või õppima, tasub Erasmus+ programm kõik
+                sõidu, elamise ja toitlustuskulud ning lisaks ka taskuraha kogu
+                õpirände vältel. Meie õppuritele on õpiränne tasuta! Praktika
+                välismaal on võrdsustatud siinse ettevõttepraktikaga, seega saad
+                erialase praktika sooritatud. Samuti arvestatakse EKAPid
+                välismaal õppimise aja eest.
+              </p>
+              <h2 className="fw-bold my-4">
+                Mida teha, et välismaale praktikale või õppima minna?
+              </h2>
+              <p>
+                Kõigepealt palume Sul oma huvist märku anda, et teaksime
+                õpirändeid kavandada. Selleks mõtle läbi miks, kuna ja millises
+                riigis sooviksid oma praktikat teha. Tartu Rakenduslikul
+                Kolledžil on koostööpartnerid peaaegu kõigis Euroopa riikides.
+                Vaata kaarti SIIT. Soovitame juba ette välispraktika planeerida
+                oma praktikaperioodiga samale ajale. Ja loomulikult kõige
+                tähtsam – mõtle, mis on Su praktika eesmärk ja mida soovid
+                välispraktika raames teha!
+              </p>
+              <h2 className="fw-bold my-4">
+                Palun esita õpirändele minekuks sooviavaldus hiljemalt 30.
+                novembriks (kui soovid välispraktikat teha 2025 aasta
+                kevadsemestril) SIIN
+              </h2>
+              <p>
+                Seejärel võtab meie rahvusvaheliste suhete koordinaator Sinuga
+                ühendust, et täpsustada välispraktika tingimusi. Ta otsib
+                vastuvõtvad partnerid õpirännete korraldamiseks ja kui koos
+                vastuvõtjaga on leitud sobiv praktikakoht ja aeg, siis tuleb
+                täita ametlik välispraktika avaldus ning muud dokumendid.
+                Enamasti korraldatakse ka enne praktikale minekut online
+                kohtumine ja mõistagi on soovitav leida aega, et vastuvõtva
+                riigi kultuuri ja keelega tutvuda.
               </p>
             </div>
           )}

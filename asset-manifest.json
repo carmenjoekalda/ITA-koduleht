@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ITA-koduleht/static/css/main.3260409e.css",
-    "main.js": "/ITA-koduleht/static/js/main.4193ed39.js",
+    "main.css": "/ITA-koduleht/static/css/main.3fb84e05.css",
+    "main.js": "/ITA-koduleht/static/js/main.0836199a.js",
     "static/js/488.5dc00adb.chunk.js": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js",
     "static/media/Elp2.png": "/ITA-koduleht/static/media/Elp2.3bf68bfdd92486efa490.png",
     "static/media/tunnustus suur.png": "/ITA-koduleht/static/media/tunnustus suur.9ea1b29832594b3e098f.png",
@@ -11,6 +11,7 @@
     "static/media/tunnustus.png": "/ITA-koduleht/static/media/tunnustus.278319fd311380309c57.png",
     "static/media/montserrat-latin-ext-400-normal.woff": "/ITA-koduleht/static/media/montserrat-latin-ext-400-normal.85beb71046499a27877f.woff",
     "static/media/montserrat-latin-ext-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-latin-ext-400-normal.1974241fa9a808c0c154.woff2",
+    "static/media/aastateg.png": "/ITA-koduleht/static/media/aastateg.06e2d327e3829f3335be.png",
     "static/media/vocolog.png": "/ITA-koduleht/static/media/vocolog.8848ba84232161df9cde.png",
     "static/media/montserrat-latin-400-normal.woff": "/ITA-koduleht/static/media/montserrat-latin-400-normal.30be1f65d8fd296bdbbe.woff",
     "static/media/montserrat-latin-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-latin-400-normal.4bc3bc9536f24ed8076d.woff2",
@@ -21,12 +22,12 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.7da603c92e367751f991.woff2",
     "static/media/montserrat-vietnamese-400-normal.woff": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.c14d61c769222a9ee56c.woff",
     "index.html": "/ITA-koduleht/index.html",
-    "main.3260409e.css.map": "/ITA-koduleht/static/css/main.3260409e.css.map",
-    "main.4193ed39.js.map": "/ITA-koduleht/static/js/main.4193ed39.js.map",
+    "main.3fb84e05.css.map": "/ITA-koduleht/static/css/main.3fb84e05.css.map",
+    "main.0836199a.js.map": "/ITA-koduleht/static/js/main.0836199a.js.map",
     "488.5dc00adb.chunk.js.map": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3260409e.css",
-    "static/js/main.4193ed39.js"
+    "static/css/main.3fb84e05.css",
+    "static/js/main.0836199a.js"
   ]
 }

@@ -8,9 +8,26 @@ import KonsultatsioonideFilter from "../components/KonsultatsioonideFilter";
 import KonsultatsioonideTabel from "../components/KonsultatsioonideTabel";
 
 const groupIds = {
+  ITA21: "1583",
   ITA22: "1692",
-  ITS22: "1691",
+  ITA23: "1844",
   ITA24: "1950",
+  BA23: "1848",
+  BA24: "1951",
+  INSA24: "1963",
+  IS23: "1848",
+  IS24: "1953",
+  ITS21: "1582",
+  ITS22: "1691",
+  ITS23: "1845",
+  ITS24: "1949",
+  UX24: "1952",
+  VS23: "1843",
+  VS24: "1954",
+  RMo23: "1866",
+  RMo24: "1957",
+  SRo24: "1956",
+  TSTt24: "1955",
 };
 
 const Tunniplaan = () => {
@@ -20,7 +37,28 @@ const Tunniplaan = () => {
   const [days, setDays] = useState(["E", "T", "K", "N", "R"]);
   const [lessonTimes, setLessonTimes] = useState({});
   const [periods, setPeriods] = useState([]);
-  const groups = ["ITA22", "ITS22", "ITA24"];
+  const groups = [
+    "ITA21",
+    "ITA22",
+    "ITA23",
+    "ITA24",
+    "BA23",
+    "BA24",
+    "INSA24",
+    "IS23",
+    "IS24",
+    "ITS21",
+    "ITS22",
+    "ITS23",
+    "ITS24",
+    "UX24",
+    "VS23",
+    "VS24",
+    "RMo23",
+    "RMo24",
+    "SRo24",
+    "TSTt24",
+  ];
 
   const getMondayOfWeek = () => {
     const today = new Date();
@@ -109,7 +147,7 @@ const Tunniplaan = () => {
       <div className="spacer"></div>
       <div className="custom-padding">
         <div className="tunniplaan-page">
-          <h1 className="mb-5">Tunniplaan</h1>
+          <h1 className="mb-0">Tunniplaan</h1>
           <GroupSelector
             selectedGroup={selectedGroup}
             onGroupChange={handleGroupChange}
@@ -128,10 +166,7 @@ const Tunniplaan = () => {
             />
           ) : (
             <p>
-              No schedule data available.{" "}
-              {selectedGroup
-                ? `Please check if there are lessons for ${selectedGroup} for the selected week.`
-                : "Please select a group."}
+              {!selectedGroup ? "Vali rühm :)" : "tundub et tunde pole, weeee"}
             </p>
           )}
         </div>

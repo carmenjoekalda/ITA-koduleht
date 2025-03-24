@@ -186,7 +186,7 @@ function EventsCalendar() {
     <div className="custom-padding">
       <Container fluid className="mt-3">
         <div className="d-flex justify-content-between">
-          <h1>Sündmuste kalender</h1>
+          <p className="fw-bold mb-5" style={{fontSize:"3rem"}}>Sündmuste kalender</p>
           <div className="d-flex align-items-end ml-auto">
             {isAuthenticated && (
               <button

@@ -8,29 +8,42 @@ import EventsCalendar from "../components/EventsCalendar";
 
 function HomePage() {
   return (
-      <div className="bg-light">
-        <Navbar />
-        <HomeSlider />
-        <div className="spacer"></div>
-        <div className="custom-padding">
-          <h1 className="mb-3">IT Akadeemia leht</h1>
-          <h4>
-            Lühitutvustus. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit
-            amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-            Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-            Vestibulum auctor ornare leo, non suscipit magna interdum eu. Ut et
-            massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-            fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-            vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor
-            ornare leo, non suscipit magna interdum eu. Ut et massa mi. Aliquam
-            in hendrerit urna.
-          </h4>
-        </div>
-        <div className="spacer"></div>
-        <EventsCalendar/>
-        <Footer />
+    <div className="bg-light">
+      <Navbar />
+      <HomeSlider />
+      <div className="spacer"></div>
+      <div className="custom-padding">
+        <p className="mb-5 fw-bold" style={{ fontSize: "4rem" }}>
+          Üldinfo Tartu rakendusliku kooli kohta
+        </p>
+        <p style={{ fontSize: "3rem" }}>
+          Tartu Rakenduslik Kolledž on Eesti suurim kutse- ja täiendusõppekeskus
+          Eestis. Meie põhitegevuseks on:
+        </p>
+        <ul style={{ fontSize: "2rem", paddingLeft: "5rem" }}>
+          <li>
+            pakkuda kutseõpet põhihariduse baasil ja keskhariduse baasil
+            õppijatele;
+          </li>
+          <li>pakkuda kutsekeskharidusõpet;</li>
+          <li>
+            pakkuda kutseõpet koolikohustuse ea ületanud põhihariduseta
+            isikutele;
+          </li>
+          <li>korraldada töökohapõhist õpet koostöös tööandjatega;</li>
+          <li>
+            viia läbi kutsevaliku programme, kutsealast eelkoolitust ja
+            kutseõpet põhikoolis ja gümnaasiumis;
+          </li>
+          <li>korraldada täiskasvanute täienduskoolitust;</li>
+          <li>korraldada karjäärialast nõustamist;</li>
+          <li>pakkuda tooteid ja teenuseid Tartu linna elanikele.</li>
+        </ul>
       </div>
+      <div className="spacer"></div>
+      <EventsCalendar />
+      <Footer />
+    </div>
   );
 }
 export default HomePage;

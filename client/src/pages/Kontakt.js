@@ -4,10 +4,12 @@ import Footer from "../components/Footer";
 import "./Kontakt.css";
 import { Circle } from "../assets/icons";
 import axios from "axios";
+import { useAuth } from "../AuthContext";
 
 function Kontakt() {
   const [data, setData] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     axios
@@ -114,26 +116,28 @@ function Kontakt() {
                     <p>{teacher.phone}</p>
                     <p>{teacher.room}</p>
                   </div>
-                  <button
-                    className="remove-btn"
-                    onClick={() =>
-                      removeContact(
-                        teacher.firstname,
-                        `${teacher.firstname} ${teacher.lastname}`
-                      )
-                    }
-                    style={{
-                      marginTop: "-20px",
-                      padding: "5px 10px",
-                      backgroundColor: "red",
-                      color: "white",
-                      borderRadius: "10px",
-                      border: "none",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Vallanda
-                  </button>
+                  {isAuthenticated && (
+                    <button
+                      className="remove-btn"
+                      onClick={() =>
+                        removeContact(
+                          teacher.firstname,
+                          `${teacher.firstname} ${teacher.lastname}`
+                        )
+                      }
+                      style={{
+                        marginTop: "-20px",
+                        padding: "5px 10px",
+                        backgroundColor: "red",
+                        color: "white",
+                        borderRadius: "10px",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Vallanda
+                    </button>
+                  )}
                 </div>
               ))
             ) : (

@@ -1,49 +1,43 @@
-const LessonSchedule = ({ schedule, days, periods, lesson_times, selectedGroup, weekOffset }) => {
-    const getWeekDates = (offset) => {
-        const today = new Date();
-        const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1 + offset * 7));
-        return days.map((_, index) => {
-            const date = new Date(startOfWeek);
-            date.setDate(startOfWeek.getDate() + index);
-            return date.toISOString().split('T')[0]; 
-        });
-    };
-
-    const weekDates = getWeekDates(weekOffset);
+const LessonSchedule = ({ schedule, days, periods, lessonTimes, selectedGroup }) => {
+    console.log("Schedule Received:", schedule);
+    console.log("Selected Group:", selectedGroup);
+    console.log("Lesson Times:", lessonTimes);
+    console.log("Periods:", periods);
+    console.log("Days:", days);
 
     return (
-        <div className='table-area'>
+        <div className="table-area">
             <table>
                 <thead>
                     <tr>
                         <th>Tund</th>
-                        {weekDates.map((date, index) => (
-                            <th key={date}>{days[index]} ({date})</th>
+                        {days?.map((day) => (
+                            <th key={day}>{day}</th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {periods.map((period) => (
+                    {periods?.map((period) => (
                         <tr key={period}>
-                            <td>{period}</td>
-                            {weekDates.map((date, index) => {
+                            <td>{lessonTimes[period]}</td>
+                            {days?.map((day) => {
                                 const lesson = schedule.find(
                                     (item) =>
-                                        item.date === date &&
-                                        item.day === days[index] &&
-                                        period === item.times &&
-                                        item.group === selectedGroup
+                                        item.day === day &&
+                                        period.toString() === item.times &&
+                                        (item.group === selectedGroup || item.group === "")
                                 );
-
                                 return (
-                                    <td key={date}>
-                                        {lesson && (
-                                            <div className='lesson'>
-                                                <p>{lesson_times[lesson.times]}</p>
+                                    <td key={day}>
+                                        {lesson ? (
+                                            <div className="lesson">
+                                                <p>{lessonTimes[lesson.times]}</p>
                                                 <a>{lesson.subject}</a>
                                                 <p>{lesson.room}</p>
                                                 <p style={{ fontSize: '0.875rem' }}>{lesson.teacher}</p>
                                             </div>
+                                        ) : (
+                                            <p></p>
                                         )}
                                     </td>
                                 );

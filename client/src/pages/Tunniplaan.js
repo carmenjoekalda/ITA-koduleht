@@ -137,7 +137,7 @@ const Tunniplaan = () => {
         </div>
         <div className="konsultatsioonid">
           <h1 className="mt-5 mb-3">Konsultatsioonid</h1>
-          <KonsultatsioonideFilter setTeacher={teacher} />
+          <KonsultatsioonideFilter setTeacher={setTeacher} />
           <KonsultatsioonideTabel teacher={teacher} />
         </div>
         <div className="spacer"></div>

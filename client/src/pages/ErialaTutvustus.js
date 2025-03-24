@@ -1,34 +1,123 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ErialaData from "../assets/ErialaData";
+import axios from "axios";
 import NavigationBar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "./ErialaTutvustus.css";
 import { Accordion } from "react-bootstrap";
 import { Arrow } from "../assets/icons";
-import { useState } from "react";
+import "./ErialaTutvustus.css";
+
 function ErialaTutvustus() {
   const { id } = useParams();
-  const eriala = ErialaData[id];
+  const [eriala, setEriala] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [activeKeys, setActiveKeys] = useState([]);
-  function handleAccordion(id) {
-    if (activeKeys.includes(id)) {
-      setActiveKeys(activeKeys.filter((key) => key !== id));
-    } else {
-      setActiveKeys([...activeKeys, id]);
-    }
+
+  useEffect(() => {
+    const fetchXMLData = async () => {
+      try {
+        const response = await axios.get(
+          "https://siseveeb.voco.ee/veebivormid/oppekavad/xml"
+        );
+        const xmlText = response.data;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+        const oppekavas = xmlDoc.getElementsByTagName("oppekava");
+
+        let foundEriala = null;
+        for (let i = 0; i < oppekavas.length; i++) {
+          const oppekava = oppekavas[i];
+          const oppekavaNimetus =
+            oppekava.getElementsByTagName("oppekava_nimetus")[0]?.textContent;
+          const oppekavaKood =
+            oppekava.getElementsByTagName("oppekava_kood")[0]?.textContent;
+          const strukt =
+            oppekava.getElementsByTagName("struktuuriuksus")[0]?.textContent;
+
+          const vastuvotuReklaamInfo = oppekava.getElementsByTagName(
+            "vastuvotu_reklaam_info"
+          )[0];
+          const kirjeldus = vastuvotuReklaamInfo
+            ? new XMLSerializer().serializeToString(
+                vastuvotuReklaamInfo.getElementsByTagName("kirjeldus")[0]
+              )
+            : "";
+          const pilt =
+            vastuvotuReklaamInfo?.getElementsByTagName("pildi_url")[0]
+              ?.textContent;
+
+          const getInnerHTML = (element) =>
+            element ? element.innerHTML || element.textContent : "";
+
+          const vastuvotutingimused = getInnerHTML(
+            oppekava.getElementsByTagName("vastuvotutingimused")[0]
+          );
+          const oskused = getInnerHTML(
+            oppekava.getElementsByTagName("oskused")[0]
+          );
+          const praktikavoimalus = getInnerHTML(
+            oppekava.getElementsByTagName("praktikavoimalus")[0]
+          );
+          const eelisedtooturul = getInnerHTML(
+            oppekava.getElementsByTagName("eelisedtooturul")[0]
+          );
+          const opiedasi = getInnerHTML(
+            oppekava.getElementsByTagName("opiedasi")[0]
+          );
+
+          if (oppekavaKood === id && strukt === "IT Akadeemia") {
+            foundEriala = {
+              oppekavaNimetus,
+              oppekavaKood,
+              strukt,
+              kirjeldus,
+              pilt,
+              vastuvotutingimused,
+              oskused,
+              praktikavoimalus,
+              eelisedtooturul,
+              opiedasi,
+            };
+            break;
+          }
+        }
+
+        if (foundEriala) {
+          setEriala(foundEriala);
+          console.log("Eriala Data:", foundEriala);
+        } else {
+          setError("Eriala not found.");
+        }
+      } catch (error) {
+        console.error("Error fetching or parsing XML:", error);
+        setError("Error fetching or parsing XML data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchXMLData();
+  }, [id]);
+
+  function handleAccordion(index) {
+    setActiveKeys((prevKeys) =>
+      prevKeys.includes(index)
+        ? prevKeys.filter((key) => key !== index)
+        : [...prevKeys, index]
+    );
   }
-  if (!eriala) {
-    return <h1>sorry, eriala pole :(</h1>;
-  }
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1>Error: {error}</h1>;
+  if (!eriala) return <h1>Sorry, this eriala does not exist :(</h1>;
 
   return (
     <div>
       <NavigationBar />
       <div className="custom-padding bg-light">
         <div style={{ height: "208px" }}></div>
-        <h1 style={{ marginBottom: "37px" }}>{eriala.title}</h1>
-        {/*erialapilt/vajalikud materjalid */}
+        <h1 style={{ marginBottom: "37px" }}>{eriala.oppekavaNimetus}</h1>
         <div
           className="d-flex"
           style={{
@@ -39,10 +128,18 @@ function ErialaTutvustus() {
             marginBottom: "8rem",
           }}
         >
-          <div className="bg-dark" style={{ width: "40%" }}></div>
+          <div
+            className="bg-dark"
+            style={{
+              width: "40%",
+              backgroundImage: `url(${eriala.pilt})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
           <div className="flex-grow-1 d-flex flex-column align-items-center">
             <div className="vajalikud-materjalid-top" />
-            <div className=" flex-grow-1">
+            <div className="flex-grow-1">
               <h1 className="mt-5">Vajalikud materjalid</h1>
               <button className="vajalikud-materjalid-btn mb-3">
                 Õppekava PDF
@@ -55,209 +152,46 @@ function ErialaTutvustus() {
         </div>
 
         <div style={{ height: "126px" }} />
+        <h1 className="p-0 mb-4">{eriala.oppekavaNimetus}</h1>
+        <div dangerouslySetInnerHTML={{ __html: eriala.kirjeldus }} />
 
-        <h1 className="p-0 mb-4">{eriala.title}</h1>
-        <h2 className="mb-5 fw-bold">
-          Keskhariduse baasil | Koolipõhine | 1a ja 6 kuud
-        </h2>
-        <p className="mb-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-          mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-          mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-          tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-          suscipit magna interdum eu. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-          Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-          ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet
-          augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-          mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-          mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-          tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-          suscipit magna interdum eu. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-          mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-          mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-          tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-          suscipit magna interdum eu. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.
-        </p>
-        <div className="spacer" />
         <Accordion alwaysOpen>
-          <Accordion.Item eventKey="0" onClick={() => handleAccordion(0)}>
-            <Accordion.Header>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                }}
-              >
-                Vastuvõtutingimused
-                <div>
-                  {activeKeys.includes(0) ? (
-                    <Arrow rotation={180} />
-                  ) : (
-                    <Arrow />
-                  )}
+          {[
+            { title: "Vastuvõtutingimused", body: eriala.vastuvotutingimused },
+            { title: "Oskused", body: eriala.oskused },
+            { title: "Praktikavõimalus", body: eriala.praktikavoimalus },
+            { title: "Eelised tööturul", body: eriala.eelisedtooturul },
+            { title: "Õpi edasi", body: eriala.opiedasi },
+          ].map((item, index) => (
+            <Accordion.Item eventKey={String(index)} key={index}>
+              <Accordion.Header onClick={() => handleAccordion(index)}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                  }}
+                >
+                  {item.title}
+                  <div>
+                    {activeKeys.includes(index) ? (
+                      <Arrow rotation={180} />
+                    ) : (
+                      <Arrow />
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Accordion.Header>
-            <Accordion.Body>
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-              ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
-              imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna
-              interdum eu.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header onClick={() => handleAccordion(1)}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                }}
-              >
-                Oskused
-                <div>
-                  {activeKeys.includes(1) ? (
-                    <Arrow rotation={180} />
-                  ) : (
-                    <Arrow />
-                  )}
-                </div>
-              </div>
-            </Accordion.Header>
-            <Accordion.Body>
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-              ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
-              imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna
-              interdum eu.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="2">
-            <Accordion.Header onClick={() => handleAccordion(2)}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                }}
-              >
-                praktikavõimalus
-                <div>
-                  {activeKeys.includes(2) ? (
-                    <Arrow rotation={180} />
-                  ) : (
-                    <Arrow />
-                  )}
-                </div>
-              </div>
-            </Accordion.Header>
-            <Accordion.Body>
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-              ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
-              imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna
-              interdum eu.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="3">
-            <Accordion.Header onClick={() => handleAccordion(3)}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                }}
-              >
-                Eelised tööturul
-                <div>
-                  {activeKeys.includes(3) ? (
-                    <Arrow rotation={180} />
-                  ) : (
-                    <Arrow />
-                  )}
-                </div>
-              </div>
-            </Accordion.Header>
-            <Accordion.Body>
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-              ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
-              imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna
-              interdum eu.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="4">
-            <Accordion.Header onClick={() => handleAccordion(4)}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                }}
-              >
-                Õpi edasi
-                <div>
-                  {activeKeys.includes(4) ? (
-                    <Arrow rotation={180} />
-                  ) : (
-                    <Arrow />
-                  )}
-                </div>
-              </div>
-            </Accordion.Header>
-            <Accordion.Body>
-              Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-              ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
-              imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna
-              interdum eu.
-            </Accordion.Body>
-          </Accordion.Item>
+              </Accordion.Header>
+              <Accordion.Body>
+                <div dangerouslySetInnerHTML={{ __html: item.body }} />
+              </Accordion.Body>
+            </Accordion.Item>
+          ))}
         </Accordion>
-        <div style={{ height: "200px" }} />
-
-        <div className="erialakont-container d-flex">
-          <div
-            className="w-50  d-flex flex-column"
-            style={{ borderRight: "solid 4px", borderColor: "#757575" }}
-          >
-            <div className="bg-dark text-center" style={{ height: "70px" }}>
-              <h1 className="text-white pt-4">It Akadeemia juht</h1>
-            </div>
-            <div className=" flex-grow-1 text-center">
-              <h1 className="mt-5 pb-4">Signe vedler</h1>
-              <p className="mb-5">
-                Pöörduda eriala ja õppekavaga seotud küsimuste korral
-              </p>
-              <p>5178966</p>
-              <p> signe.vedler@voco.ee</p>
-            </div>
-          </div>
-          <div className="  flex-grow-1"></div>
-          <div className="w-50  d-flex flex-column">
-            <div className="bg-dark text-center" style={{ height: "70px" }}>
-              <h1 className="text-white pt-4">Tugikeskuse juht</h1>
-            </div>
-            <div className=" flex-grow-1 text-center">
-              <h1 className="mt-5 pb-4">Helen Johanson</h1>
-              <p className="mb-5">
-                Pöörduda eriala ja õppekavaga seotud küsimuste korral
-              </p>
-              <p>58868004</p>
-              <p> helen.johanson@voco.ee</p>
-            </div>
-          </div>
-          <div className="  flex-grow-1"></div>
-        </div>
-
-        <div className="spacer" />
       </div>
       <Footer />
     </div>
   );
 }
+
 export default ErialaTutvustus;

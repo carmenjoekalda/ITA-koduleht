@@ -17,20 +17,23 @@ function Erialad() {
           </div>
           <div className="d-flex pt-3" style={{ gap: "1rem" }}>
             <div>
-              <p>Eriala nimetus |</p>
-              <p>Eriala Nimetus |</p>
+              <p>
+                 IT-süsteemide nooremspetsialist  |</p>
+              <p>IT-süsteemide spetsialist        |</p>
             </div>
             <div>
-              <p>Eriala nimetus |</p>
-              <p>Eriala Nimetus |</p>
+              <p>
+            disaini nooremspetsialist   |</p>
+              <p>Kestlikud tehnoloogiad    |   </p>
             </div>
             <div>
-              <p>Eriala nimetus |</p>
-              <p>Eriala Nimetus |</p>
+              <p>Noorem tarkvaraarendaja |</p>
+              <p>Raamatupidaja |</p>
             </div>
             <div>
-              <p>Eriala nimetus</p>
-              <p>Eriala Nimetus</p>
+              <p>
+              Turvasüsteemide tehnik</p>
+              <p>Väikeettevõtja</p>
             </div>
           </div>
         </div>
@@ -41,30 +44,11 @@ function Erialad() {
           </div>
           <div className="d-flex pt-3" style={{ gap: "1rem" }}>
             <p>Bürooassistent | </p>
-            <p>Sekretär</p>
+            <p>Sekretär  |  </p>
             <p> Raamatupidaja |</p>
             <p> Väikeettevõtja</p>
           </div>
         </div>
-        <div style={{ height: "184px" }} />
-
-        <div className="d-flex flex-row justify-content-between px-4">
-          <div className="filter d-flex align-items-center justify-content-between px-4">
-            Haridusnõue
-            <Arrow />
-          </div>
-          <div className="filter d-flex align-items-center justify-content-between px-4">
-            Haridusnõue
-            <Arrow />
-          </div>
-          <div className="filter d-flex align-items-center justify-content-between px-4">
-            Haridusnõue
-            <Arrow />
-          </div>
-          <button className="filter-btn">Filtreeri</button>
-        </div>
-        <div className="spacer" />
-
         <ErialaCards/>
 
 

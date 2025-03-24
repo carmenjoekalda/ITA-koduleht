@@ -53,11 +53,12 @@ function Kontakt() {
             {Itaka && Itaka.length > 0 ? (
               Itaka.map((teacher, index) => (
                 <div className="teacher-box" key={index}>
-                  <div
-                    className="h-50 mb-4 pt-3 d-flex py-3"
+                  <div 
+                    className=" mb-3 pt-4 d-flex py-3"
                     style={{
                       borderBottom: "3px solid",
                       alignItems: "center", 
+                      height: "65%"
                     }}
                   >
                     <div

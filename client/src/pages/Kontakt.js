@@ -84,8 +84,8 @@ function Kontakt() {
                   >
                     <div
                       style={{
-                        width: "50px",
-                        height: "50px",
+                        width: "3vw",
+                        height: "3vw",
                         borderRadius: "50%",
                         backgroundColor: teacher.image ? "transparent" : "gray",
                         backgroundImage: teacher.image

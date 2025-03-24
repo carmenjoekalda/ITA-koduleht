@@ -176,8 +176,8 @@ const Tunniplaan = () => {
           <KonsultatsioonideTabel teacher={teacher} />
         </div>
         <div className="spacer"></div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };

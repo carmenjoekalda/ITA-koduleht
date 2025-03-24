@@ -9,9 +9,10 @@
   display: block;
   border-radius: 5px;
   background: #5a5a5a;
-  width: 262.585px;
-  height: 61.259px;
+  height: 5rem;
+  width: 20rem;
   flex-shrink: 0;
+  flex-grow: 1;
 }
 
 .accordion-button {

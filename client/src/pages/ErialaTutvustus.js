@@ -14,6 +14,7 @@ function ErialaTutvustus() {
   const [error, setError] = useState(null);
   const [activeKeys, setActiveKeys] = useState([]);
 
+
   useEffect(() => {
     const fetchXMLData = async () => {
       try {
@@ -38,31 +39,37 @@ function ErialaTutvustus() {
           const vastuvotuReklaamInfo = oppekava.getElementsByTagName(
             "vastuvotu_reklaam_info"
           )[0];
-          const kirjeldus = vastuvotuReklaamInfo
-            ? new XMLSerializer().serializeToString(
-                vastuvotuReklaamInfo.getElementsByTagName("kirjeldus")[0]
-              )
-            : "";
+          
+          const getElementContent = (element) => {
+            if (!element) return "";
+            return element.textContent || "";
+          };
+          
+          let kirjeldus = "";
+          if (vastuvotuReklaamInfo) {
+            const kirjeldusElement = vastuvotuReklaamInfo.getElementsByTagName("kirjeldus")[0];
+            if (kirjeldusElement) {
+              kirjeldus = getElementContent(kirjeldusElement);
+            }
+          }
+          
           const pilt =
             vastuvotuReklaamInfo?.getElementsByTagName("pildi_url")[0]
               ?.textContent;
 
-          const getInnerHTML = (element) =>
-            element ? element.innerHTML || element.textContent : "";
-
-          const vastuvotutingimused = getInnerHTML(
+          const vastuvotutingimused = getElementContent(
             oppekava.getElementsByTagName("vastuvotutingimused")[0]
           );
-          const oskused = getInnerHTML(
+          const oskused = getElementContent(
             oppekava.getElementsByTagName("oskused")[0]
           );
-          const praktikavoimalus = getInnerHTML(
+          const praktikavoimalus = getElementContent(
             oppekava.getElementsByTagName("praktikavoimalus")[0]
           );
-          const eelisedtooturul = getInnerHTML(
+          const eelisedtooturul = getElementContent(
             oppekava.getElementsByTagName("eelisedtooturul")[0]
           );
-          const opiedasi = getInnerHTML(
+          const opiedasi = getElementContent(
             oppekava.getElementsByTagName("opiedasi")[0]
           );
 
@@ -84,8 +91,9 @@ function ErialaTutvustus() {
         }
 
         if (foundEriala) {
+          console.log("Raw Eriala Data:", foundEriala);
+          
           setEriala(foundEriala);
-          console.log("Eriala Data:", foundEriala);
         } else {
           setError("Eriala not found.");
         }
@@ -108,6 +116,10 @@ function ErialaTutvustus() {
     );
   }
 
+  const createMarkup = (htmlContent) => {
+    return { __html: htmlContent };
+  };
+
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>Error: {error}</h1>;
   if (!eriala) return <h1>Sorry, this eriala does not exist :(</h1>;
@@ -116,8 +128,8 @@ function ErialaTutvustus() {
     <div>
       <NavigationBar />
       <div className="custom-padding bg-light">
-        <div style={{ height: "208px" }}></div>
-        <h1 style={{ marginBottom: "37px" }}>{eriala.oppekavaNimetus}</h1>
+        <div style={{ height: "100px" }}></div>
+        <p style={{ marginBottom: "37px", fontSize:"5rem" }}>{eriala.oppekavaNimetus}</p>
         <div
           className="d-flex"
           style={{
@@ -140,22 +152,23 @@ function ErialaTutvustus() {
           <div className="flex-grow-1 d-flex flex-column align-items-center">
             <div className="vajalikud-materjalid-top" />
             <div className="flex-grow-1">
-              <h1 className="mt-5">Vajalikud materjalid</h1>
-              <button className="vajalikud-materjalid-btn mb-3">
+              <h1 className="mt-5 mb-0 pb-4" >Vajalikud materjalid</h1>
+              <button className="vajalikud-materjalid-btn mb-3 mt-0" style={{color: "white"}}>
                 Õppekava PDF
               </button>
-              <button className="vajalikud-materjalid-btn">
+              <button className="vajalikud-materjalid-btn" style={{color: "white"}}>
                 Rakenduskava PDF
               </button>
             </div>
           </div>
         </div>
 
-        <div style={{ height: "126px" }} />
-        <h1 className="p-0 mb-4">{eriala.oppekavaNimetus}</h1>
-        <div dangerouslySetInnerHTML={{ __html: eriala.kirjeldus }} />
 
-        <Accordion alwaysOpen>
+        <h1 className="p-0 mb-2 mt-0 pt-0">{eriala.oppekavaNimetus}</h1>
+        
+        <div style={{fontSize: "2rem"}} dangerouslySetInnerHTML={createMarkup(eriala.kirjeldus)} />
+
+        <Accordion alwaysOpen >
           {[
             { title: "Vastuvõtutingimused", body: eriala.vastuvotutingimused },
             { title: "Oskused", body: eriala.oskused },
@@ -183,12 +196,13 @@ function ErialaTutvustus() {
                 </div>
               </Accordion.Header>
               <Accordion.Body>
-                <div dangerouslySetInnerHTML={{ __html: item.body }} />
+                <div className="ps-5 ms-5" dangerouslySetInnerHTML={createMarkup(item.body)} />
               </Accordion.Body>
             </Accordion.Item>
           ))}
         </Accordion>
       </div>
+      <div className="spacer"></div>
       <Footer />
     </div>
   );

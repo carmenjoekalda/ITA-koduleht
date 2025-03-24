@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ITA-koduleht/static/css/main.3fb84e05.css",
-    "main.js": "/ITA-koduleht/static/js/main.0836199a.js",
+    "main.js": "/ITA-koduleht/static/js/main.61761247.js",
     "static/js/488.5dc00adb.chunk.js": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js",
     "static/media/Elp2.png": "/ITA-koduleht/static/media/Elp2.3bf68bfdd92486efa490.png",
     "static/media/tunnustus suur.png": "/ITA-koduleht/static/media/tunnustus suur.9ea1b29832594b3e098f.png",
@@ -23,11 +23,11 @@
     "static/media/montserrat-vietnamese-400-normal.woff": "/ITA-koduleht/static/media/montserrat-vietnamese-400-normal.c14d61c769222a9ee56c.woff",
     "index.html": "/ITA-koduleht/index.html",
     "main.3fb84e05.css.map": "/ITA-koduleht/static/css/main.3fb84e05.css.map",
-    "main.0836199a.js.map": "/ITA-koduleht/static/js/main.0836199a.js.map",
+    "main.61761247.js.map": "/ITA-koduleht/static/js/main.61761247.js.map",
     "488.5dc00adb.chunk.js.map": "/ITA-koduleht/static/js/488.5dc00adb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3fb84e05.css",
-    "static/js/main.0836199a.js"
+    "static/js/main.61761247.js"
   ]
 }

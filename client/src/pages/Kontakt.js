@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavigationBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Kontakt.css";
 import { Circle } from "../assets/icons";
-import { useEffect, useState } from "react";
 import axios from "axios";
+
 function Kontakt() {
   const [data, setData] = useState(null);
+  const [filteredData, setFilteredData] = useState(null);
 
   useEffect(() => {
     axios
       .get("https://siseveeb.voco.ee/veebilehe_andmed/tootajad?section=ALL")
-      .then((response) => setData(response.data.employees))
+      .then((response) => {
+        setData(response.data.employees);
+        setFilteredData(response.data.employees);
+      })
       .catch((error) => console.error("Error:", error));
   }, []);
 
-  const Itaka = data ? data.filter((e) => e.department === "IT Akadeemia") : [];
+  const Itaka = filteredData
+    ? filteredData.filter((e) => e.department === "IT Akadeemia")
+    : [];
+  const removeContact = (fullName) => {
+    setFilteredData((prevData) => {
+      const updatedData = prevData.filter(
+        (employee) => `${employee.firstname} ${employee.lastname}` !== fullName
+      );
+      console.log("Updated data after removal:", updatedData);
+      return updatedData;
+    });
+  };
+
   return (
     <>
       <NavigationBar />
@@ -43,7 +59,7 @@ function Kontakt() {
           </div>
 
           <div className="line" />
-          <h2 className="text-center"> Tootajad</h2>
+          <h2 className="text-center">Töötajad</h2>
           <div className="line" />
 
           <div
@@ -51,14 +67,14 @@ function Kontakt() {
             style={{ justifyContent: "space-between", gap: "7rem" }}
           >
             {Itaka && Itaka.length > 0 ? (
-              Itaka.map((teacher, index) => (
-                <div className="teacher-box" key={index}>
-                  <div 
-                    className=" mb-3 pt-4 d-flex py-3"
+              Itaka.map((teacher) => (
+                <div className="teacher-box" key={teacher.id}>
+                  <div
+                    className="mb-3 pt-4 d-flex py-3"
                     style={{
                       borderBottom: "3px solid",
-                      alignItems: "center", 
-                      height: "65%"
+                      alignItems: "center",
+                      height: "65%",
                     }}
                   >
                     <div
@@ -71,11 +87,18 @@ function Kontakt() {
                           ? `url(${teacher.image})`
                           : "none",
                         backgroundSize: "cover",
-                        backgroundPosition: "center", 
-                        flexShrink: 0, 
+                        backgroundPosition: "center",
+                        flexShrink: 0,
                       }}
                     ></div>
-                    <div className="ps-3 pt-3" style={{ flex: 1, overflow: "hidden", textOverflow:"ellipsis"}}>
+                    <div
+                      className="ps-3 pt-3"
+                      style={{
+                        flex: 1,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
                       <p className="fw-bold mb-2">
                         {teacher.firstname} {teacher.lastname}
                       </p>
@@ -86,12 +109,27 @@ function Kontakt() {
                     <p>{teacher.phone}</p>
                     <p>{teacher.room}</p>
                   </div>
-             
+                  <button
+                    className="remove-btn"
+                    onClick={() =>
+                      removeContact(`${teacher.firstname} ${teacher.lastname}`)
+                    }
+                    style={{
+                      marginTop: "10px",
+                      padding: "5px 10px",
+                      backgroundColor: "red",
+                      color: "white",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Eemalda
+                  </button>
                 </div>
               ))
             ) : (
               <p>
-                Tundub et koolis enam töötajaid pole :( või siis su nett on
+                Tundub, et koolis enam töötajaid pole :( või siis su nett on
                 lihtsalt sitt
               </p>
             )}
@@ -100,11 +138,9 @@ function Kontakt() {
         </div>
         <div className="spacer" />
       </div>
-      <div>
-        {/* {data ? <pre>{JSON.stringify(data[0], null, 2)}</pre> : <p>Loading...</p>} */}
-      </div>
       <Footer />
     </>
   );
 }
+
 export default Kontakt;

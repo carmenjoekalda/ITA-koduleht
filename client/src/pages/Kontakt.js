@@ -1,6 +1,6 @@
 import React from "react";
-import NavigationBar from "./Navbar";
-import Footer from "./Footer";
+import NavigationBar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./Kontakt.css";
 import { Circle } from "../assets/icons";
 import { useEffect, useState } from "react";
@@ -57,7 +57,18 @@ function Kontakt() {
                     className="h-50 mb-4 pt-3 d-flex"
                     style={{ borderBottom: "3px solid" }}
                   >
-                    <Circle />
+                    <div
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "50%",
+                        backgroundColor: teacher.image ? "transparent" : "gray",
+                        backgroundImage: teacher.image
+                          ? `url(${teacher.image})`
+                          : "none",
+                        backgroundSize: "cover",
+                      }}
+                    ></div>
                     <div className="ps-3 pt-3">
                       <h2 className="fw-bold mb-2">
                         {teacher.firstname} {teacher.lastname}
@@ -84,11 +95,7 @@ function Kontakt() {
         <div className="spacer" />
       </div>
       <div>
-
-
         {/* {data ? <pre>{JSON.stringify(data[0], null, 2)}</pre> : <p>Loading...</p>} */}
-      
-      
       </div>
       <Footer />
     </>

@@ -10,7 +10,7 @@ import Voistlused from "./pages/Voistlused";
 import Tunnustused from "./pages/Tunnustused";
 import Tunnustus from "./pages/Tunnustus";
 import Tunniplaan from "./pages/Tunniplaan";
-import Kontakt from "./components/Kontakt";
+import Kontakt from "./pages/Kontakt";
 import Test from "./pages/test";
 import AdminLogin from "./pages/AdminLogin";
 import { AuthProvider } from "./AuthContext";

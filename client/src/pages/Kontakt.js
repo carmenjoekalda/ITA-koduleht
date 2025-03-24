@@ -54,8 +54,11 @@ function Kontakt() {
               Itaka.map((teacher, index) => (
                 <div className="teacher-box" key={index}>
                   <div
-                    className="h-50 mb-4 pt-3 d-flex"
-                    style={{ borderBottom: "3px solid" }}
+                    className="h-50 mb-4 pt-3 d-flex py-3"
+                    style={{
+                      borderBottom: "3px solid",
+                      alignItems: "center", 
+                    }}
                   >
                     <div
                       style={{
@@ -67,20 +70,22 @@ function Kontakt() {
                           ? `url(${teacher.image})`
                           : "none",
                         backgroundSize: "cover",
+                        backgroundPosition: "center", 
+                        flexShrink: 0, 
                       }}
                     ></div>
-                    <div className="ps-3 pt-3">
-                      <h2 className="fw-bold mb-2">
+                    <div className="ps-3 pt-3" style={{ flex: 1, overflow: "hidden", textOverflow:"ellipsis"}}>
+                      <p className="fw-bold mb-2">
                         {teacher.firstname} {teacher.lastname}
-                      </h2>
-                      <h3></h3>
+                      </p>
+                      <h3>{teacher.ended_proffession}</h3>
                     </div>
                   </div>
                   <div>
                     <p>{teacher.phone}</p>
                     <p>{teacher.room}</p>
                   </div>
-                  <div className="line mt-5" />
+             
                 </div>
               ))
             ) : (

@@ -1,0 +1,152 @@
+.praktika-button,
+.praktika-button-selected {
+  width: 17.4375rem;
+  height: 5.3125rem;
+  flex-shrink: 0;
+  border: 1px solid #1e1e1e;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.praktika-button {
+  background: #d9d9d9;
+  color: #1e1e1e;
+}
+
+.praktika-button-selected {
+  background: #1e1e1e;
+  color: #fbfbfb;
+}
+.praktika-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.praktika-table th,
+td {
+  border: 1px solid #1e1e1e;
+}
+.custom-table {
+  border-radius: 10px 10px 0 10px;
+  table-layout: fixed;
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+}
+.custom-table thead {
+  border: 1px solid #1e1e1e;
+  background: #383838;
+  color: #fbfbfb;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 5.5rem;
+}
+.year-box {
+  width: 9.9375rem;
+  height: 3.875rem;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #757575;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5625rem;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.praktika-top-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.4375rem;
+}
+.praktika-top-container p {
+  color: #fbfbfb;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.custom-table th,
+.custom-table td {
+  padding: 1.8125rem;
+}
+
+.col1 {
+  background-color: #383838;
+  color: #fbfbfb;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 5.5rem;
+}
+.col2 {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #f2f2f2;
+}
+
+.praktika-img {
+  margin-bottom: 1.375rem;
+  margin-top: 3.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.praktika-img div {
+  display: flex;
+  width: 75rem;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.praktika-img img {
+  width: 75rem;
+  justify-self: center;
+}
+.prakkand p,
+h1 {
+  padding-bottom: 3.25rem;
+}
+.prakkand h2 {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.prakkand a {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 2px;
+  margin-bottom: 0.6rem;
+}

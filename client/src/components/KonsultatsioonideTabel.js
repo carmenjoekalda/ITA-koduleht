@@ -1,54 +1,97 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const KonsultatsioonideTabel = ({ ajad, teacher }) => {
+const KonsultatsioonideTabel = ({ teacher }) => {
+  const [ajad, setAjad] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    return (
-        <div className="table-area mb-5">
-            <table>
-                <thead>
-                    <tr>
-                        {/* <th style={{ width: "17.5rem", border: "1px solid black" }}> */}
-                        <th style={{ width: "17rem"}}>
-                            <h1 className="ps-2">Õpetaja</h1>
-                        </th>
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://siseveeb.voco.ee/veebilehe_andmed/konsultatsioonid?hoone=KPL&aasta=2024"
+        );
+        const data = await response.json();
+        const completeData = data.konsultatsioonid.filter((item) => {
+          const isValid =
+            item.kuupaevad &&
+            item.kuupaevad.length > 0 &&
+            item.opetaja &&
+            item.opetaja.trim() !== "" &&
+            item.aeg &&
+            item.aeg.trim() !== "" &&
+            item.ruum &&
+            item.ruum.trim() !== "";
+          const currentDate = new Date();
+          const isFutureDate = item.kuupaevad.some(
+            (dateStr) => new Date(dateStr) > currentDate
+          );
 
-                        <th style={{ width: "55rem"}}>
-                            <h1 className="ps-3">Kuupäevad</h1>
-                        </th>
+          return isValid && isFutureDate;
+        });
 
-                        <th style={{ width: "17rem"}}>
-                            <h1 className="ps-3">Kellaaeg</h1>
-                        </th>
+        setAjad(completeData);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-                        <th style={{ width: "8rem"}}>
-                            <h1 className="ps-2">Ruum</h1>
-                        </th>
-                    </tr>
-                </thead>
+    fetchData();
+  }, []);
 
-                <tbody>
-                    {ajad.filter((item) => teacher === '' || item.teacher === teacher).map((data) => (
-                        <tr key={data.date}>
-                            <td>
-                                <h3 className="m-0 ps-3">{data.teacher}</h3>
-                            </td>
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-                            <td>
-                                <h3 className="m-0 ps-3">{data.date}</h3>
-                            </td>
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
-                            <td>
-                                <h3 className="m-0 ps-3">{data.time}</h3>
-                            </td>
+  return (
+    <div className="table-area mb-5">
+      <table>
+        <thead>
+          <tr>
+            <th style={{ width: "17rem" }}>
+              <h1 className="ps-2">Õpetaja</h1>
+            </th>
+            <th style={{ width: "55rem" }}>
+              <h1 className="ps-3">Kuupäevad</h1>
+            </th>
+            <th style={{ width: "17rem" }}>
+              <h1 className="ps-3">Kellaaeg</h1>
+            </th>
+            <th style={{ width: "8rem" }}>
+              <h1 className="ps-2">Ruum</h1>
+            </th>
+          </tr>
+        </thead>
 
-                            <td>
-                                <h3 className="m-0 text-center">{data.room}</h3>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-)};
+        <tbody>
+          {ajad
+            .filter((item) => teacher === "" || item.opetaja === teacher)
+            .map((data) => (
+              <tr key={data.paev + data.aeg}>
+                <td>
+                  <h3 className="m-0 ps-3">{data.opetaja}</h3>
+                </td>
+                <td>
+                  <h3 className="m-0 ps-3">{data.kuupaevad.join(", ")}</h3>
+                </td>
+                <td>
+                  <h3 className="m-0 ps-3">{data.aeg}</h3>
+                </td>
+                <td>
+                  <h3 className="m-0 text-center">{data.ruum}</h3>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default KonsultatsioonideTabel;

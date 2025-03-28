@@ -1,0 +1,48 @@
+.vajalikud-materjalid-top {
+  border-radius: 10px;
+  background: #757575;
+  height: 1rem;
+  border-radius: 0 10px 10px 0;
+  width: 100%;
+}
+.vajalikud-materjalid-btn {
+  display: block;
+  border-radius: 5px;
+  background: #5a5a5a;
+  height: 5rem;
+  width: 20rem;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.accordion-button {
+  border-radius: 10px;
+  background: #3a3a3a !important;
+  height: 75.763px;
+  color: #fbfbfb !important;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.accordion-button::after {
+  display: none;
+}
+.accordion-body {
+  color: #1e1e1e;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  right: 30px;
+}
+
+.erialakont-container {
+  border-radius: 5px;
+  border: 1px solid #757575;
+  background: #f2f2f2;
+  height: 296.648px;
+  flex-shrink: 0;
+}

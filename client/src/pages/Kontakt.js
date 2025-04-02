@@ -142,8 +142,7 @@ function Kontakt() {
               ))
             ) : (
               <p>
-                Tundub, et koolis enam töötajaid pole :( või siis su nett on
-                lihtsalt sitt
+                Töötajaid ei leitud
               </p>
             )}
             <div style={{ height: "20px", width: "100%" }}></div>

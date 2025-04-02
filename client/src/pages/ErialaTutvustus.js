@@ -122,7 +122,7 @@ function ErialaTutvustus() {
 
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>Error: {error}</h1>;
-  if (!eriala) return <h1>Sorry, this eriala does not exist :(</h1>;
+  if (!eriala) return <h1>Eriala ei eksisteeri</h1>;
 
   return (
     <div>

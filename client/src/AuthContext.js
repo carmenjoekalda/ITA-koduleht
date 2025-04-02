@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
     return {
       success: false,
       message:
-        "well well well, see küll õige parool pole, paneb mind kahtlema kas sa üldse oled admin. ja vaata mis sa nüüd teinud oled, css läks sinu pärast katki",
+        "Valed andmed",
     };
   };
 

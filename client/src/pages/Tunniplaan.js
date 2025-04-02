@@ -38,7 +38,6 @@ const Tunniplaan = () => {
   const [lessonTimes, setLessonTimes] = useState({});
   const [periods, setPeriods] = useState([]);
   const groups = [
-    "ITA21",
     "ITA22",
     "ITA23",
     "ITA24",
@@ -166,7 +165,7 @@ const Tunniplaan = () => {
             />
           ) : (
             <p>
-              {!selectedGroup ? "Vali rühm :)" : "tundub et tunde pole, weeee"}
+              {!selectedGroup ? "Palun vali tunniplaan" : "Sel kursusel puuduvad tunnid"}
             </p>
           )}
         </div>
